@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My GitHub Pages Site1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JackDevCollins | Game Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body>
-<h1>Hello, GitHub Pages!</h1>
-<p>This site is hosted with GitHub Pages.</p>
+<body class="black-mesa-theme">
+    <div id="crt-overlay"></div>
+    
+    <div class="app-container">
+        <aside class="sidebar terminal-frame">
+            <div class="sidebar-header">
+                <h2>BLACK MESA</h2>
+                <p class="status">SYSTEM: ONLINE</p>
+            </div>
+            <nav class="sidebar-nav">
+                <button onclick="loadPage(\"home\")" class="nav-btn diegetic-button" id="nav-home">HOME</button>
+                <button onclick="loadPage(\"work\")" class="nav-btn diegetic-button" id="nav-work">INDIVIDUAL WORK</button>
+                <button onclick="loadPage(\"team\")" class="nav-btn diegetic-button" id="nav-team">TEAMWORK</button>
+                <button onclick="loadPage(\"personal\")" class="nav-btn diegetic-button" id="nav-personal">PERSONAL</button>
+            </nav>
+            <div class="sidebar-footer">
+                <p>ACCESS: LEVEL 4</p>
+            </div>
+        </aside>
+
+        <main id="content-area" class="main-content">
+            <!-- Content will be injected here by script.js -->
+        </main>
+    </div>
 </body>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
 </html>
