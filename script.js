@@ -1,139 +1,90 @@
-const pages = {
-    home: `
-        <section class="page-section">
-            <div class="hero terminal-frame">
+﻿const pages = {
+    home: \
+        <section class=\"page-section\">
+            <div class=\"hero terminal-frame\">
                 <h1>SUBJECT: GORDON FREEMAN</h1>
-                <p class="subtitle">STATUS: RESEARCH ASSOCIATE | POSITION: GAME DEVELOPER</p>
-                <div class="hero-image-placeholder">
+                <p class=\"subtitle\">STATUS: RESEARCH ASSOCIATE | POSITION: GAME DEVELOPER</p>
+                <div class=\"hero-image-placeholder\">
                     [HERO IMAGE: GORDON_IN_HEV_SUIT.JPG]
                 </div>
             </div>
-            <div class="bio-section">
+            <div class=\"bio-section\">
                 <h3>PERSONNEL BIO</h3>
                 <p>Welcome to the Black Mesa Research Facility secure portal. I am a Game Developer specializing in immersive systems and technical design. This terminal showcases my recent projects and collaborations within the facility.</p>
             </div>
-            <div class="links-section">
-                <a href="https://linkedin.com" target="_blank" class="diegetic-button-static">LINKEDIN_PORTAL.EXE</a>
-                <a href="https://github.com" target="_blank" class="diegetic-button-static">GITHUB_REPOS.EXE</a>
+            <div class=\"links-section\">
+                <a href=\"https://linkedin.com\" target=\"_blank\" class=\"diegetic-button-static\">LINKEDIN_PORTAL.EXE</a>
+                <a href=\"https://github.com\" target=\"_blank\" class=\"diegetic-button-static\">GITHUB_REPOS.EXE</a>
             </div>
         </section>
-    `,
-    work: `
-        <section class="page-section">
+    \,
+    work: \
+        <section class=\"page-section\">
             <h2>INDIVIDUAL ASSIGNMENTS</h2>
-            <div class="work-grid">
-                <div class="work-card terminal-frame">
+            <div class=\"work-grid\">
+                <div class=\"work-card terminal-frame\">
                     <h3>PROJECT: DFS1</h3>
-                    <div class="media-container" id="dfs1-media">
-                        <img src="images/placeholder.png" alt="DFS1 Placeholder" class="current-media">
-                        <div class="media-controls">
-                            <button class="diegetic-button-static mini" id="cycle-dfs1">CYCLE_MEDIA</button>
+                    <div class=\"media-container\" id=\"dfs1-media\">
+                        <img src=\"images/placeholder.png\" alt=\"DFS1 Placeholder\" class=\"current-media\">
+                        <div class=\"media-controls\">
+                            <button class=\"diegetic-button-static mini\" id=\"cycle-dfs1\">CYCLE_MEDIA</button>
                         </div>
                     </div>
-                    <div class="description">
+                    <div class=\"description\">
                         <p>Classification: Top Secret. Project DFS1 involves the implementation of advanced spatial algorithms. [Detailed description to be provided by user].</p>
                     </div>
                 </div>
             </div>
         </section>
-    `,
-    team: `
-        <section class="page-section">
+    \,
+    team: \
+        <section class=\"page-section\">
             <h2>TEAM COLLABORATIONS</h2>
-            <div class="team-sections">
-                <div class="team-project terminal-frame">
+            <div class=\"team-sections\">
+                <div class=\"team-project terminal-frame\">
                     <h3>ANOMALOUS MATERIALS TEAM</h3>
-                    <div class="gallery-container">
-                        <div class="gallery-scroll">
-                            <img src="images/placeholder.png" alt="Team 1">
-                            <img src="images/placeholder.png" alt="Team 1">
-                        </div>
-                    </div>
                     <p>Cooperative development of resonance cascade containment systems. [Description pending].</p>
                 </div>
-                <div class="team-project terminal-frame">
-                    <h3>LAMBDA COMPLEX INITIATIVE</h3>
-                    <div class="gallery-container">
-                        <div class="gallery-scroll">
-                            <img src="images/placeholder.png" alt="Team 2">
-                            <img src="images/placeholder.png" alt="Team 2">
-                        </div>
-                    </div>
-                    <p>Joint effort on portal stabilization and teleportation diagnostics. [Description pending].</p>
-                </div>
             </div>
         </section>
-    `,
-    personal: `
-        <section class="page-section">
+    \,
+    personal: \
+        <section class=\"page-section\">
             <h2>PERSONNEL DOSSIER</h2>
-            <div class="dossier-grid">
-                <div class="dossier-left">
-                    <img src="images/placeholder.png" alt="Gordon Freeman" class="portrait terminal-frame">
-                    <div class="info-block">
+            <div class=\"dossier-grid\">
+                <div class=\"dossier-left\">
+                    <img src=\"images/placeholder.png\" alt=\"Gordon Freeman\" class=\"portrait terminal-frame\">
+                    <div class=\"info-block\">
                         <p><strong>NAME:</strong> JACK COLLINS</p>
                         <p><strong>CLEARANCE:</strong> LEVEL 4</p>
-                        <p><strong>DEPT:</strong> GAME DEVELOPMENT</p>
                     </div>
                 </div>
-                <div class="dossier-right">
+                <div class=\"dossier-right\">
                     <h3>DOCUMENTS</h3>
-                    <div class="doc-links">
-                        <a href="resume.pdf" download class="diegetic-button-static">DOWNLOAD_RESUME.PDF</a>
-                        <a href="coverletter.pdf" download class="diegetic-button-static">DOWNLOAD_COVER_LETTER.PDF</a>
-                    </div>
-                    <div class="cover-letter-preview terminal-frame">
-                        <p>To the Black Mesa Recruitment Board...</p>
-                        <p>[Full cover letter text will be placed here]</p>
+                    <div class=\"doc-links\">
+                        <a href=\"resume.pdf\" download class=\"diegetic-button-static\">DOWNLOAD_RESUME.PDF</a>
                     </div>
                 </div>
             </div>
         </section>
-    `
+    \
 };
 
 function loadPage(pageKey) {
-    const contentArea = document.getElementById("content-area");
+    const contentArea = document.getElementById(\"content-area\");
     if (!contentArea) return;
-    
-    contentArea.innerHTML = pages[pageKey] || "<h1>404: DATA CORRUPTED</h1>";
-    
-    // Update active state in nav
-    document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
-    const activeBtn = document.getElementById(`nav-${pageKey}`);
-    if (activeBtn) activeBtn.classList.add("active");
-
-    // Re-attach listeners for dynamically injected buttons (like media cycle)
-    if (pageKey === "work") {
-        const cycleBtn = document.getElementById("cycle-dfs1");
-        if (cycleBtn) cycleBtn.addEventListener("click", () => cycleMedia("dfs1"));
-    }
-
-    contentArea.scrollTop = 0;
+    contentArea.innerHTML = pages[pageKey] || \"<h1>404: DATA CORRUPTED</h1>\";
+    document.querySelectorAll(\".nav-btn\").forEach(btn => btn.classList.remove(\"active\"));
+    const activeBtn = document.getElementById(\
+av-\\);
+    if (activeBtn) activeBtn.classList.add(\"active\");
 }
 
-const mediaAssets = {
-    dfs1: ["images/placeholder.png", "images/placeholder2.png"]
-};
-let mediaIndex = { dfs1: 0 };
-
-function cycleMedia(projectId) {
-    const container = document.querySelector(`#${projectId}-media img`);
-    if (!container) return;
-    
-    mediaIndex[projectId] = (mediaIndex[projectId] + 1) % mediaAssets[projectId].length;
-    container.src = mediaAssets[projectId][mediaIndex[projectId]];
-}
-
-// Global Event Listeners for Nav
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".nav-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const page = btn.getAttribute("data-page");
-            loadPage(page);
+document.addEventListener(\"DOMContentLoaded\", () => {
+    document.querySelectorAll(\".nav-btn\").forEach(btn => {
+        btn.addEventListener(\"click\", () => {
+            loadPage(btn.getAttribute(\"data-page\"));
         });
     });
-
-    // Initial Load
-    loadPage("home");
+    loadPage(\"home\");
 });

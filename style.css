@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --lambda-orange: #FF9F00;
     --concrete-grey: #4A4A4A;
     --terminal-green: #00FF00;
@@ -16,7 +16,7 @@
 body {
     background-color: var(--dark-bg);
     color: var(--lambda-orange);
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;
     overflow: hidden;
 }
 
@@ -78,10 +78,10 @@ body {
     flex-grow: 1;
 }
 
-/* Diegetic Buttons with Fixed Container to prevent layout shift */
 .button-container {
-    height: 50px; /* Fixed height for the button area */
+    height: 50px;
     position: relative;
+    width: 100%;
 }
 
 .diegetic-button {
@@ -97,7 +97,7 @@ body {
     text-align: left;
     outline: none;
     width: 100%;
-    height: 44px; /* Slightly less than container */
+    height: 44px;
     position: absolute;
     top: 0;
     left: 0;
@@ -109,54 +109,12 @@ body {
 }
 
 .diegetic-button:active, .diegetic-button.active {
-    top: 4px; /* Physical depression move */
+    top: 4px;
     left: 4px;
     border-bottom-width: 2px;
     border-right-width: 2px;
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 40px;
-    overflow-y: auto;
-    background: radial-gradient(circle, #333 0%, #1A1A1A 100%);
-}
-
-.terminal-frame {
-    border: 2px solid var(--concrete-grey);
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.3);
-    position: relative;
-    margin-bottom: 20px;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
-}
-
-.terminal-frame::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 20px;
-    height: 20px;
-    border-top: 4px solid var(--lambda-orange);
-    border-left: 4px solid var(--lambda-orange);
-}
-
-.page-section {
-    animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.main-content::-webkit-scrollbar { width: 12px; }
-.main-content::-webkit-scrollbar-track { background: var(--dark-bg); }
-.main-content::-webkit-scrollbar-thumb { background: var(--concrete-grey); border: 3px solid var(--dark-bg); }
-.main-content::-webkit-scrollbar-thumb:hover { background: var(--lambda-orange); }
-
-/* Static diegetic look for links and media buttons */
 .diegetic-button-static {
     background: var(--concrete-grey);
     border: 3px solid #666;
@@ -182,3 +140,50 @@ body {
     border-right-width: 2px;
 }
 
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+    background: radial-gradient(circle, #333 0%, #1A1A1A 100%);
+}
+
+.terminal-frame {
+    border: 2px solid var(--concrete-grey);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.terminal-frame::before {
+    content: \"\";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    border-top: 4px solid var(--lambda-orange);
+    border-left: 4px solid var(--lambda-orange);
+}
+
+.page-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content::-webkit-scrollbar { width: 12px; }
+.main-content::-webkit-scrollbar-track { background: var(--dark-bg); }
+.main-content::-webkit-scrollbar-thumb { background: var(--concrete-grey); border: 3px solid var(--dark-bg); }
+.main-content::-webkit-scrollbar-thumb:hover { background: var(--lambda-orange); }
+
+/* Dossier & Work Layouts */
+.dossier-grid { display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+.portrait { width: 100%; border: 4px solid var(--concrete-grey); }
+.work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+.media-container { background: #000; margin-bottom: 15px; border: 2px solid #333; }
+.current-media { width: 100%; display: block; }
