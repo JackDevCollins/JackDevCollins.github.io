@@ -3,49 +3,49 @@ const pages = {
     home: `<section class="page-section page-home">
         <div class="hero terminal-frame">
             <h1>SUBJECT: JACK COLLINS</h1>
-            <p class="subtitle">STATUS: RESEARCH ASSOCIATE | SECTOR: C (TEST FACILITIES)</p>
+            <p class="subtitle">STATUS: RESEARCHER | FACILITY SECTOR: C (TESTING)</p>
             <div class="hero-video-container">
                 <video autoplay muted loop playsinline>
                     <source src="images/content/old_hero_video.mp4" type="video/mp4">
-                    [VIDEO_DATA_NOT_SUPPORTED]
+                    [SECURE_VIDEO_FEED_OFFLINE]
                 </video>
             </div>
         </div>
         <div class="bio-section terminal-frame">
             <h3>PERSONNEL BIO</h3>
-            <p>Welcome to the Black Mesa Research Facility secure portal. Specialized in immersive systems, technical design, and facility-wide technical initiatives.</p>
+            <p>Secure portal accessed. Specialized in immersive systems, technical design, and large-scale interactive environments.</p>
         </div>
         <div class="links-section">
-            <a href="https://www.linkedin.com/in/jack-collins-gaming/" target="_blank" class="diegetic-button-static">LINKEDIN_PORTAL.EXE</a>
-            <a href="https://github.com/JackDevCollins" target="_blank" class="diegetic-button-static">GITHUB_REPOS.EXE</a>
+            <a href="https://www.linkedin.com/in/jack-collins-gaming/" target="_blank" class="diegetic-button-static">LINKEDIN_ENTRY.EXE</a>
+            <a href="https://github.com/JackDevCollins" target="_blank" class="diegetic-button-static">GIT_REPOSITORY.EXE</a>
         </div></section>`,
     work: `<section class="page-section page-work">
-        <h2>INDIVIDUAL ASSIGNMENTS</h2>
+        <h2>TECHNICAL ASSIGNMENTS</h2>
         <div class="work-grid">
             <div class="work-card terminal-frame">
                 <h3>PROJECT: DFS1 (Spatial-Alg)</h3>
-                <div class="media-container" id="dfs1-media"><img src="images/placeholder.png" class="current-media"><div class="media-controls"><button class="diegetic-button-static mini" id="cycle-dfs1">CYCLE_MEDIA</button></div></div>
-                <div class="description"><p>Project DFS1: Advanced spatial algorithm implementation for non-Euclidean navigation.</p></div>
+                <div class="media-container" id="dfs1-media"><img src="images/placeholder.png" class="current-media"><div class="media-controls"><button class="diegetic-button-static mini" id="cycle-dfs1">CYCLE_FEED</button></div></div>
+                <div class="description"><p>Project DFS1: Advanced spatial algorithm implementation for non-linear navigation environments.</p></div>
             </div>
             <div class="work-card terminal-frame">
-                <h3>PROJECT: HEV-INT</h3>
-                <p>Integration of real-time telemetry into Mark IV Protective Suits. [DATA ENCRYPTED]</p>
+                <h3>PROJECT: HEV-INTERFACE</h3>
+                <p>Integration of real-time diagnostics into specialized protective equipment. [ENCRYPTED]</p>
             </div>
         </div></section>`,
     team: `<section class="page-section page-team">
-        <h2>TEAM COLLABORATIONS</h2>
+        <h2>COLLABORATIVE PROJECTS</h2>
         <div class="team-sections">
             <div class="team-project terminal-frame">
-                <h3>PROJECT ALPHA: ANOMALOUS MATERIALS</h3>
+                <h3>INITIATIVE ALPHA: CORE MATERIALS</h3>
                 <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
-                <p>Development of resonance cascade containment and high-energy physics diagnostics in Sector C.</p>
+                <p>Development of containment protocols and high-energy diagnostics in Testing Sector C.</p>
             </div>
         </div></section>`,
     personal: `<section class="page-section page-personal">
         <h2>PERSONNEL DOSSIER</h2>
         <div class="dossier-grid">
-            <div class="dossier-left"><img src="images/placeholder.png" class="portrait terminal-frame"><div class="info-block terminal-frame"><p><strong>NAME:</strong> JACK COLLINS</p><p><strong>ID:</strong> BMRF-942-JS</p></div></div>
-            <div class="dossier-right"><div class="terminal-frame"><h3>DOCUMENTS</h3><div class="doc-links"><a href="resume.pdf" download class="diegetic-button-static">DOWNLOAD_RESUME.PDF</a></div><p style="color:var(--terminal-green);">Clearance Level 4 required.</p></div></div>
+            <div class="dossier-left"><img src="images/headshot.jpg" class="portrait terminal-frame"><div class="info-block terminal-frame"><p><strong>NAME:</strong> JACK COLLINS</p><p><strong>ID:</strong> FAC-942-JS</p></div></div>
+            <div class="dossier-right"><div class="terminal-frame"><h3>DOCUMENTS</h3><div class="doc-links" style="margin: 15px 0;"><a href="resume.pdf" download class="diegetic-button-static">ACCESS_RESUME.PDF</a></div><p style="color:var(--terminal-green);">Clearance Level 4 Authenticated.</p></div></div>
         </div></section>`
 };
 function loadPage(p){ 
