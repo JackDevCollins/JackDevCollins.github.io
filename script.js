@@ -13,8 +13,8 @@ const pages = {
                 <p>Welcome to the Black Mesa Research Facility secure portal. I am a Game Developer specializing in immersive systems and technical design. This terminal showcases my recent projects and collaborations within the facility.</p>
             </div>
             <div class="links-section">
-                <a href="https://linkedin.com" target="_blank" class="diegetic-button">LINKEDIN_PORTAL.EXE</a>
-                <a href="https://github.com" target="_blank" class="diegetic-button">GITHUB_REPOS.EXE</a>
+                <a href="https://linkedin.com" target="_blank" class="diegetic-button-static">LINKEDIN_PORTAL.EXE</a>
+                <a href="https://github.com" target="_blank" class="diegetic-button-static">GITHUB_REPOS.EXE</a>
             </div>
         </section>
     `,
@@ -27,7 +27,7 @@ const pages = {
                     <div class="media-container" id="dfs1-media">
                         <img src="images/placeholder.png" alt="DFS1 Placeholder" class="current-media">
                         <div class="media-controls">
-                            <button onclick="cycleMedia('dfs1')" class="diegetic-button mini">CYCLE_MEDIA</button>
+                            <button class="diegetic-button-static mini" id="cycle-dfs1">CYCLE_MEDIA</button>
                         </div>
                     </div>
                     <div class="description">
@@ -79,8 +79,8 @@ const pages = {
                 <div class="dossier-right">
                     <h3>DOCUMENTS</h3>
                     <div class="doc-links">
-                        <a href="resume.pdf" download class="diegetic-button">DOWNLOAD_RESUME.PDF</a>
-                        <a href="coverletter.pdf" download class="diegetic-button">DOWNLOAD_COVER_LETTER.PDF</a>
+                        <a href="resume.pdf" download class="diegetic-button-static">DOWNLOAD_RESUME.PDF</a>
+                        <a href="coverletter.pdf" download class="diegetic-button-static">DOWNLOAD_COVER_LETTER.PDF</a>
                     </div>
                     <div class="cover-letter-preview terminal-frame">
                         <p>To the Black Mesa Recruitment Board...</p>
@@ -93,35 +93,47 @@ const pages = {
 };
 
 function loadPage(pageKey) {
-    const contentArea = document.getElementById(\"content-area\");
+    const contentArea = document.getElementById("content-area");
     if (!contentArea) return;
     
-    contentArea.innerHTML = pages[pageKey] || \"<h1>404: DATA CORRUPTED</h1>\";
+    contentArea.innerHTML = pages[pageKey] || "<h1>404: DATA CORRUPTED</h1>";
     
     // Update active state in nav
-    document.querySelectorAll(\".nav-btn\").forEach(btn => btn.classList.remove(\"active\"));
-    const activeBtn = document.getElementById(\`nav-\${pageKey}\`);
-    if (activeBtn) activeBtn.classList.add(\"active\");
+    document.querySelectorAll(".nav-btn").forEach(btn => btn.classList.remove("active"));
+    const activeBtn = document.getElementById(`nav-${pageKey}`);
+    if (activeBtn) activeBtn.classList.add("active");
 
-    // Scroll to top
+    // Re-attach listeners for dynamically injected buttons (like media cycle)
+    if (pageKey === "work") {
+        const cycleBtn = document.getElementById("cycle-dfs1");
+        if (cycleBtn) cycleBtn.addEventListener("click", () => cycleMedia("dfs1"));
+    }
+
     contentArea.scrollTop = 0;
 }
 
-// Media cycling logic
 const mediaAssets = {
-    dfs1: [\"images/placeholder.png\", \"images/placeholder2.png\"]
+    dfs1: ["images/placeholder.png", "images/placeholder2.png"]
 };
 let mediaIndex = { dfs1: 0 };
 
 function cycleMedia(projectId) {
-    const container = document.querySelector(\`#\${projectId}-media img\`);
+    const container = document.querySelector(`#${projectId}-media img`);
     if (!container) return;
     
     mediaIndex[projectId] = (mediaIndex[projectId] + 1) % mediaAssets[projectId].length;
     container.src = mediaAssets[projectId][mediaIndex[projectId]];
 }
 
-// Initialize when DOM is ready
-document.addEventListener(\"DOMContentLoaded\", () => {
-    loadPage(\"home\");
+// Global Event Listeners for Nav
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const page = btn.getAttribute("data-page");
+            loadPage(page);
+        });
+    });
+
+    // Initial Load
+    loadPage("home");
 });

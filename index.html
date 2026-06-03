@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JackDevCollins | Game Dev Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body class="black-mesa-theme">
     <div id="crt-overlay"></div>
@@ -17,10 +16,10 @@
                 <p class="status">SYSTEM: ONLINE</p>
             </div>
             <nav class="sidebar-nav">
-                <button onclick="loadPage('home')" class="nav-btn diegetic-button" id="nav-home">HOME</button>
-                <button onclick="loadPage('work')" class="nav-btn diegetic-button" id="nav-work">INDIVIDUAL WORK</button>
-                <button onclick="loadPage('team')" class="nav-btn diegetic-button" id="nav-team">TEAMWORK</button>
-                <button onclick="loadPage('personal')" class="nav-btn diegetic-button" id="nav-personal">PERSONAL</button>
+                <div class="button-container"><button class="nav-btn diegetic-button" data-page="home" id="nav-home">HOME</button></div>
+                <div class="button-container"><button class="nav-btn diegetic-button" data-page="work" id="nav-work">INDIVIDUAL WORK</button></div>
+                <div class="button-container"><button class="nav-btn diegetic-button" data-page="team" id="nav-team">TEAMWORK</button></div>
+                <div class="button-container"><button class="nav-btn diegetic-button" data-page="personal" id="nav-personal">PERSONAL</button></div>
             </nav>
             <div class="sidebar-footer">
                 <p>ACCESS: LEVEL 4</p>
@@ -31,5 +30,6 @@
             <!-- Content will be injected here by script.js -->
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
