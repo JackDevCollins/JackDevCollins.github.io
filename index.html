@@ -1,35 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JackDevCollins | Game Dev Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>JackDevCollins</title>
+    <link rel='stylesheet' href='style.css?v=2'>
 </head>
-<body class="black-mesa-theme">
-    <div id="crt-overlay"></div>
-    
-    <div class="app-container">
-        <aside class="sidebar terminal-frame">
-            <div class="sidebar-header">
-                <h2>BLACK MESA</h2>
-                <p class="status">SYSTEM: ONLINE</p>
-            </div>
-            <nav class="sidebar-nav">
-                <div class="button-container"><button class="nav-btn diegetic-button" data-page="home" id="nav-home">HOME</button></div>
-                <div class="button-container"><button class="nav-btn diegetic-button" data-page="work" id="nav-work">INDIVIDUAL WORK</button></div>
-                <div class="button-container"><button class="nav-btn diegetic-button" data-page="team" id="nav-team">TEAMWORK</button></div>
-                <div class="button-container"><button class="nav-btn diegetic-button" data-page="personal" id="nav-personal">PERSONAL</button></div>
-            </nav>
-            <div class="sidebar-footer">
-                <p>ACCESS: LEVEL 4</p>
-            </div>
+<body style='background: #1a1a1a; color: #FF9F00; font-family: sans-serif;'>
+    <div style='display: flex; height: 100vh;'>
+        <aside style='width: 250px; border-right: 2px solid #444; padding: 20px;'>
+            <button class='nav-btn' data-page='home'>HOME</button>
+            <button class='nav-btn' data-page='work'>WORK</button>
         </aside>
-
-        <main id="content-area" class="main-content">
-            <!-- Content will be injected here by script.js -->
+        <main id='content-area' style='flex: 1; padding: 40px;'>
+            Loading...
         </main>
     </div>
-    <script src="script.js"></script>
+    <script src='script.js?v=2'></script>
 </body>
 </html>
