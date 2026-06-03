@@ -6,7 +6,7 @@ const pages = {
             <p class="subtitle">STATUS: RESEARCHER | FACILITY SECTOR: C (TESTING)</p>
             <div class="hero-video-container">
                 <video autoplay muted loop playsinline>
-                    <source src="images/content/old_hero_video.mp4" type="video/mp4">
+                    <source src="images/content/hero_compressed.mp4" type="video/mp4">
                     [SECURE_VIDEO_FEED_OFFLINE]
                 </video>
             </div>
