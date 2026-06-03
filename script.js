@@ -27,7 +27,7 @@ const pages = {
                     <div class="media-container" id="dfs1-media">
                         <img src="images/placeholder.png" alt="DFS1 Placeholder" class="current-media">
                         <div class="media-controls">
-                            <button onclick="cycleMedia(\"dfs1\")" class="diegetic-button mini">CYCLE_MEDIA</button>
+                            <button onclick="cycleMedia('dfs1')" class="diegetic-button mini">CYCLE_MEDIA</button>
                         </div>
                     </div>
                     <div class="description">
@@ -94,6 +94,8 @@ const pages = {
 
 function loadPage(pageKey) {
     const contentArea = document.getElementById(\"content-area\");
+    if (!contentArea) return;
+    
     contentArea.innerHTML = pages[pageKey] || \"<h1>404: DATA CORRUPTED</h1>\";
     
     // Update active state in nav
@@ -119,5 +121,7 @@ function cycleMedia(projectId) {
     container.src = mediaAssets[projectId][mediaIndex[projectId]];
 }
 
-// Initialize with home page
-window.onload = () => loadPage(\"home\");
+// Initialize when DOM is ready
+document.addEventListener(\"DOMContentLoaded\", () => {
+    loadPage(\"home\");
+});
