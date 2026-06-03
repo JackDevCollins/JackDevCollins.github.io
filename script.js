@@ -13,27 +13,35 @@ const pages = {
         <div class="bio-section terminal-frame">
             <h3>PERSONNEL BIO</h3>
             <p>Secure portal accessed. Specialized in immersive systems, technical design, and large-scale interactive environments.</p>
+            <p style="margin-top:10px; font-family:monospace; color:var(--terminal-green);">CONTACT: <a href="mailto:JackofallDev@gmail.com" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--terminal-green);">JackofallDev@gmail.com</a></p>
         </div>
         <div class="links-section">
             <a href=\"https://www.linkedin.com/in/jack-collins-gaming/\" target=\"_blank\" class=\"diegetic-button-static\">LINKEDIN_ENTRY.EXE</a>
             <a href=\"https://github.com/JackDevCollins\" target=\"_blank\" class=\"diegetic-button-static\">GIT_REPOSITORY.EXE</a>
         </div></section>`,
     work: `<section class="page-section page-work">
-        <h2 style="color:var(--blue-accent);">TECHNICAL ASSIGNMENTS</h2>
+        <h2 style="color:var(--blue-accent);">INDIVIDUAL_STUDIES</h2>
+        <p style="font-size:0.8rem; margin-bottom:20px; opacity:0.8; font-family:monospace;">> Accessing solo assignments and technical explorations...</p>
         <div class="work-grid">
             <div class="work-card terminal-frame">
-                <h3>PROJECT: DFS1</h3>
+                <h3>PROJECT: DFS01 OpenXR</h3>
                 <div class="media-container" id="dfs1-media"><img src="images/placeholder.png" class="current-media"><div class="media-controls"><button class="diegetic-button-static mini" id="cycle-dfs1">CYCLE_FEED</button></div></div>
-                <p>Advanced spatial algorithm implementation for non-linear navigation environments.</p>
+                <p>Advanced spatial algorithm implementation and OpenXR integration for immersive navigation environments.</p>
             </div>
         </div></section>`,
     team: `<section class="page-section page-team">
-        <h2 style="color:var(--terminal-green);">COLLABORATIVE PROJECTS</h2>
+        <h2 style="color:var(--terminal-green);">TEAM_COLLABORATIONS</h2>
+        <p style="font-size:0.8rem; margin-bottom:20px; opacity:0.8; font-family:monospace;">> Accessing multi-departmental joint initiatives...</p>
         <div class="team-sections">
             <div class="team-project terminal-frame">
-                <h3>INITIATIVE ALPHA: CORE MATERIALS</h3>
+                <h3>PROJECT: Splitter Cell</h3>
                 <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
-                <p>Containment protocols and high-energy diagnostics in Testing Sector C.</p>
+                <p>Collaborative stealth-action mechanics development. Focus on environmental interactivity and AI-driven detection systems.</p>
+            </div>
+            <div class="team-project terminal-frame">
+                <h3>PROJECT: Hamster Ballin</h2>
+                <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
+                <p>Cooperative development of physics-based locomotion systems and dynamic obstacle synchronization.</p>
             </div>
         </div></section>`,
     personal: `<section class="page-section page-personal">
@@ -48,6 +56,7 @@ const pages = {
                     <p><strong>NAME:</strong> JACK COLLINS</p>
                     <p><strong>ID:</strong> FAC-942-JS</p>
                     <p><strong>DEPT:</strong> SOFTWARE DEV</p>
+                    <p><strong>EMAIL:</strong> <a href="mailto:JackofallDev@gmail.com" style="color:inherit;">JackofallDev@gmail.com</a></p>
                 </div>
                 <div class=\"terminal-frame\">
                     <h3>DOCUMENTS</h3>
@@ -103,7 +112,7 @@ function loadPage(p){
     a.scrollTop=0; 
 }
 const mediaAssets={dfs1:["images/placeholder.png","images/placeholder2.png"]}; let mediaIndex={dfs1:0};
-function cycleMedia(id){ const img=document.querySelector("#"+id+"-media img"); if(!img)return; mediaIndex[id]=(mediaIndex[id]+1)%mediaAssets[id].length; img.src=mediaAssets[id][mediaIndex[id]]; }
+function cycleMedia(id){ const img=document.querySelector("#"+id+"-media img"); if(!img))return; mediaIndex[id]=(mediaIndex[id]+1)%mediaAssets[id].length; img.src=mediaAssets[id][mediaIndex[id]]; }
 document.addEventListener("DOMContentLoaded",()=>{ 
     document.querySelectorAll(".nav-btn").forEach(b=>{ b.addEventListener("click",()=>loadPage(b.getAttribute("data-page"))); }); 
     loadPage("home"); 
