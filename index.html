@@ -1,45 +1,35 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>JackDevCollins | System Archive</title>
-    <link rel='stylesheet' href='style.css?v=8'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JackDevCollins | Game Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<body class='black-mesa-theme'>
-    <div id='crt-overlay'></div>
-    <div class='app-container'>
-        <aside class='sidebar terminal-frame'>
-            <div class='sidebar-header'>
-                <div class="jdc-logo-container">
-                <div class="jdc-glyph">
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                    <div class="glyph-layer">JDC</div>
-                </div>
+<body class="black-mesa-theme">
+    <div id="crt-overlay"></div>
+    
+    <div class="app-container">
+        <aside class="sidebar terminal-frame">
+            <div class="sidebar-header">
+                <h2>BLACK MESA</h2>
+                <p class="status">SYSTEM: ONLINE</p>
             </div>
-                </div>
-                <h2>ARCHIVE_01</h2>
-                <p class='status'>DATA_PORTAL: ONLINE</p>
-            </div>
-            <nav class='sidebar-nav'>
-                <div class='button-container'><button class='nav-btn diegetic-button' data-page='home' id='nav-home'>HOME</button></div>
-                <div class='button-container'><button class='nav-btn diegetic-button' data-page='work' id='nav-work'>INDIV_STUDIES</button></div>
-                <div class='button-container'><button class='nav-btn diegetic-button' data-page='team' id='nav-team'>COLLABORATIONS</button></div>
-                <div class='button-container'><button class='nav-btn diegetic-button' data-page='personal' id='nav-personal'>DOSSIER</button></div>
+            <nav class="sidebar-nav">
+                <button onclick="loadPage('home')" class="nav-btn diegetic-button" id="nav-home">HOME</button>
+                <button onclick="loadPage('work')" class="nav-btn diegetic-button" id="nav-work">INDIVIDUAL WORK</button>
+                <button onclick="loadPage('team')" class="nav-btn diegetic-button" id="nav-team">TEAMWORK</button>
+                <button onclick="loadPage('personal')" class="nav-btn diegetic-button" id="nav-personal">PERSONAL</button>
             </nav>
-            <div class='sidebar-footer'><p>SEC_LEVEL: 4</p></div>
+            <div class="sidebar-footer">
+                <p>ACCESS: LEVEL 4</p>
+            </div>
         </aside>
-        <main id='content-area' class='main-content'>ACCESSING DATABASE...</main>
+
+        <main id="content-area" class="main-content">
+            <!-- Content will be injected here by script.js -->
+        </main>
     </div>
-    <script src='script.js?v=8'></script>
 </body>
 </html>
-
