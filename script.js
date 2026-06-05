@@ -54,7 +54,7 @@ const pages = {
                 <div class=\"info-block terminal-frame glitch-target\">
                     <p class="scramble-target"><strong>NAME:</strong> JACK COLLINS</p>
                     <p class="scramble-target"><strong>ID:</strong> FAC-942-JS</p>
-                    <p><strong>EMAIL:</strong> <a href="mailto:JackofallDev@gmail.com" class="no-scramble" style="color:inherit;">JackofallDev@gmail.com</a></p>
+                    <p><strong>EMAIL:</strong> <a href="mailto:JackCollStack@outlook.com" class="no-scramble" style="color:inherit;">JackCollStack@outlook.com</a></p>
                 </div>
             </div>
             <div class=\"dossier-right\">
@@ -85,9 +85,9 @@ function loadPage(p){
 const scrambles = { "o": "0", "O": "0", "s": "$", "S": "$", "a": "@", "A": "@", "e": "3", "E": "3", "i": "1", "I": "1" };
 function scrambleText() {
     document.querySelectorAll(".scramble-target:not(.no-scramble)").forEach(el => {
-        if (Math.random() > 0.95) {
+        if (Math.random() > 0.80) {
             const original = el.innerText;
-            const scrambled = original.split("").map(char => (scrambles[char] && Math.random() > 0.7) ? scrambles[char] : char).join("");
+            const scrambled = original.split("").map(char => (scrambles[char] && Math.random() > 0.6) ? scrambles[char] : char).join("");
             el.innerText = scrambled;
             setTimeout(() => { el.innerText = original; }, 150);
         }
