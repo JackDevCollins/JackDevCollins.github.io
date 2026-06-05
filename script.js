@@ -1,123 +1,103 @@
+﻿
 const pages = {
-    home: `
-        <section class="page-section">
-            <div class="hero terminal-frame">
-                <h1>SUBJECT: GORDON FREEMAN</h1>
-                <p class="subtitle">STATUS: RESEARCH ASSOCIATE | POSITION: GAME DEVELOPER</p>
-                <div class="hero-image-placeholder">
-                    [HERO IMAGE: GORDON_IN_HEV_SUIT.JPG]
+    home: `<section class="page-section page-home">
+        <div class="status-container"><div class="status-msg">ACCESSING_SECURE_PORTAL... [SUCCESS]</div></div>
+        <div class="hero terminal-frame glitch-target glitch-active">
+            <h1 class="scramble-target">SUBJECT: JACK COLLINS</h1>
+            <p class="subtitle scramble-target">STATUS: RESEARCHER | SECTOR: C (TESTING)</p>
+            <div class="hero-video-bg">
+                <video autoplay muted loop playsinline><source src="images/content/hero_compressed.mp4" type="video/mp4"></video>
+            </div>
+        </div>
+        <div class="bio-section terminal-frame glitch-target">
+            <h3 class="scramble-target">PERSONNEL BIO</h3>
+            <p class="scramble-target">Specialized in immersive systems and technical design. Accessing contact data...</p>
+            <p style="margin-top:10px; font-family:monospace; color:var(--terminal-green);">CONTACT: <a href="mailto:JackofallDev@gmail.com" class="no-scramble" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--terminal-green);">JackofallDev@gmail.com</a></p>
+        </div>
+        <div class="links-section">
+            <a href=\"https://www.linkedin.com/in/jack-collins-gaming/\" target=\"_blank\" class=\"diegetic-button-static no-scramble\">LINKEDIN_ENTRY.EXE</a>
+            <a href=\"https://github.com/JackDevCollins\" target=\"_blank\" class=\"diegetic-button-static no-scramble\">GIT_REPOSITORY.EXE</a>
+        </div></section>`,
+    work: `<section class="page-section page-work">
+        <div class="status-container"><div class="status-msg">ACCESSING_SOLO_ASSIGNMENTS... [DECRYPTING]</div></div>
+        <h2 style="color:var(--blue-accent);" class="scramble-target">INDIV_STUDIES</h2>
+        <div class="work-grid">
+            <div class="work-card terminal-frame glitch-target glitch-active">
+                <h3 class="scramble-target">PROJECT: DFS01 OpenXR</h3>
+                <div class="media-container" id="dfs1-media"><img src="images/placeholder.png" class="current-media"><div class="media-controls"><button class="diegetic-button-static mini no-scramble" id="cycle-dfs1">CYCLE_FEED</button></div></div>
+                <p class="scramble-target">Advanced spatial algorithm implementation and OpenXR integration.</p>
+            </div>
+        </div></section>`,
+    team: `<section class="page-section page-team">
+        <div class="status-container"><div class="status-msg">ACCESSING_JOINT_INITIATIVES... [AUTHORIZED]</div></div>
+        <h2 style="color:var(--terminal-green);" class="scramble-target">TEAM_COLLABORATIONS</h2>
+        <div class="team-sections">
+            <div class="team-project terminal-frame glitch-target">
+                <h3 class="scramble-target">PROJECT: Splitter Cell</h3>
+                <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
+                <p class="scramble-target">Collaborative stealth-action mechanics development.</p>
+            </div>
+            <div class="team-project terminal-frame glitch-target glitch-active">
+                <h3 class="scramble-target">PROJECT: Hamster Ballin</h2>
+                <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
+                <p class="scramble-target">Cooperative development of physics-based locomotion systems.</p>
+            </div>
+        </div></section>`,
+    personal: `<section class="page-section page-personal">
+        <div class="status-container"><div class="status-msg">ACCESSING_PERSONNEL_DOSSIER... [AUTHENTICATED]</div></div>
+        <h2 style=\"color:var(--alert-red);\" class="scramble-target">PERSONNEL DOSSIER</h2>
+        <div class=\"dossier-grid\">
+            <div class=\"dossier-left\">
+                <div class=\"portrait-container terminal-frame glitch-target glitch-active\">
+                    <img src=\"images/content/headshot.jpg\" class=\"portrait\">
+                </div>
+                <div class=\"info-block terminal-frame glitch-target\">
+                    <p class="scramble-target"><strong>NAME:</strong> JACK COLLINS</p>
+                    <p class="scramble-target"><strong>ID:</strong> FAC-942-JS</p>
+                    <p><strong>EMAIL:</strong> <a href="mailto:JackofallDev@gmail.com" class="no-scramble" style="color:inherit;">JackofallDev@gmail.com</a></p>
                 </div>
             </div>
-            <div class="bio-section">
-                <h3>PERSONNEL BIO</h3>
-                <p>Welcome to the Black Mesa Research Facility secure portal. I am a Game Developer specializing in immersive systems and technical design. This terminal showcases my recent projects and collaborations within the facility.</p>
-            </div>
-            <div class="links-section">
-                <a href="https://linkedin.com" target="_blank" class="diegetic-button">LINKEDIN_PORTAL.EXE</a>
-                <a href="https://github.com" target="_blank" class="diegetic-button">GITHUB_REPOS.EXE</a>
-            </div>
-        </section>
-    `,
-    work: `
-        <section class="page-section">
-            <h2>INDIVIDUAL ASSIGNMENTS</h2>
-            <div class="work-grid">
-                <div class="work-card terminal-frame">
-                    <h3>PROJECT: DFS1</h3>
-                    <div class="media-container" id="dfs1-media">
-                        <img src="images/placeholder.png" alt="DFS1 Placeholder" class="current-media">
-                        <div class="media-controls">
-                            <button onclick="cycleMedia('dfs1')" class="diegetic-button mini">CYCLE_MEDIA</button>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Classification: Top Secret. Project DFS1 involves the implementation of advanced spatial algorithms. [Detailed description to be provided by user].</p>
-                    </div>
+            <div class=\"dossier-right\">
+                <div class=\"terminal-frame glitch-target\">
+                    <h3 class="scramble-target">EDUCATION_HISTORY</h3>
+                    <div class=\"edu-entry\"><p class="scramble-target"><strong>SMU GUILDHALL</strong> [2025-2027]</p><p class="scramble-target">Master of Science: Game Programming</p></div>
                 </div>
-            </div>
-        </section>
-    `,
-    team: `
-        <section class="page-section">
-            <h2>TEAM COLLABORATIONS</h2>
-            <div class="team-sections">
-                <div class="team-project terminal-frame">
-                    <h3>ANOMALOUS MATERIALS TEAM</h3>
-                    <div class="gallery-container">
-                        <div class="gallery-scroll">
-                            <img src="images/placeholder.png" alt="Team 1">
-                            <img src="images/placeholder.png" alt="Team 1">
-                        </div>
-                    </div>
-                    <p>Cooperative development of resonance cascade containment systems. [Description pending].</p>
-                </div>
-                <div class="team-project terminal-frame">
-                    <h3>LAMBDA COMPLEX INITIATIVE</h3>
-                    <div class="gallery-container">
-                        <div class="gallery-scroll">
-                            <img src="images/placeholder.png" alt="Team 2">
-                            <img src="images/placeholder.png" alt="Team 2">
-                        </div>
-                    </div>
-                    <p>Joint effort on portal stabilization and teleportation diagnostics. [Description pending].</p>
-                </div>
-            </div>
-        </section>
-    `,
-    personal: `
-        <section class="page-section">
-            <h2>PERSONNEL DOSSIER</h2>
-            <div class="dossier-grid">
-                <div class="dossier-left">
-                    <img src="images/placeholder.png" alt="Gordon Freeman" class="portrait terminal-frame">
-                    <div class="info-block">
-                        <p><strong>NAME:</strong> JACK COLLINS</p>
-                        <p><strong>CLEARANCE:</strong> LEVEL 4</p>
-                        <p><strong>DEPT:</strong> GAME DEVELOPMENT</p>
-                    </div>
-                </div>
-                <div class="dossier-right">
-                    <h3>DOCUMENTS</h3>
-                    <div class="doc-links">
-                        <a href="resume.pdf" download class="diegetic-button">DOWNLOAD_RESUME.PDF</a>
-                        <a href="coverletter.pdf" download class="diegetic-button">DOWNLOAD_COVER_LETTER.PDF</a>
-                    </div>
-                    <div class="cover-letter-preview terminal-frame">
-                        <p>To the Black Mesa Recruitment Board...</p>
-                        <p>[Full cover letter text will be placed here]</p>
+                <div class=\"terminal-frame glitch-target\">
+                    <h3 class="scramble-target">SYSTEM_CAPABILITIES</h3>
+                    <div style=\"display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-size:0.8rem; font-family:monospace;\">
+                        <div><p class="scramble-target">> UNREAL ENGINE 5/4</p><p class="scramble-target">> BLUEPRINTING</p></div>
+                        <div><p class="scramble-target">> SUBSTANCE SUITE</p><p class="scramble-target">> C++ / HOUDINI</p></div>
                     </div>
                 </div>
             </div>
-        </section>
-    `
+        </div></section>`
 };
 
-function loadPage(pageKey) {
-    const contentArea = document.getElementById(\"content-area\");
-    contentArea.innerHTML = pages[pageKey] || \"<h1>404: DATA CORRUPTED</h1>\";
-    
-    // Update active state in nav
-    document.querySelectorAll(\".nav-btn\").forEach(btn => btn.classList.remove(\"active\"));
-    const activeBtn = document.getElementById(\`nav-\${pageKey}\`);
-    if (activeBtn) activeBtn.classList.add(\"active\");
-
-    // Scroll to top
-    contentArea.scrollTop = 0;
+function loadPage(p){ 
+    const a=document.getElementById("content-area"); if(!a)return; 
+    a.innerHTML=pages[p]||"<h1>404</h1>"; 
+    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+    const act=document.getElementById("nav-"+p); if(act)act.classList.add("active");
+    if(p==="work"){const c=document.getElementById("cycle-dfs1"); if(c)c.onclick=()=>cycleMedia("dfs1");}
+    a.scrollTop=0; 
 }
 
-// Media cycling logic
-const mediaAssets = {
-    dfs1: [\"images/placeholder.png\", \"images/placeholder2.png\"]
-};
-let mediaIndex = { dfs1: 0 };
-
-function cycleMedia(projectId) {
-    const container = document.querySelector(\`#\${projectId}-media img\`);
-    if (!container) return;
-    
-    mediaIndex[projectId] = (mediaIndex[projectId] + 1) % mediaAssets[projectId].length;
-    container.src = mediaAssets[projectId][mediaIndex[projectId]];
+const scrambles = { "o": "0", "O": "0", "s": "$", "S": "$", "a": "@", "A": "@", "e": "3", "E": "3", "i": "1", "I": "1" };
+function scrambleText() {
+    document.querySelectorAll(".scramble-target:not(.no-scramble)").forEach(el => {
+        if (Math.random() > 0.95) {
+            const original = el.innerText;
+            const scrambled = original.split("").map(char => (scrambles[char] && Math.random() > 0.7) ? scrambles[char] : char).join("");
+            el.innerText = scrambled;
+            setTimeout(() => { el.innerText = original; }, 150);
+        }
+    });
 }
+setInterval(scrambleText, 3000);
 
-// Initialize with home page
-window.onload = () => loadPage(\"home\");
+const mediaAssets={dfs1:["images/placeholder.png","images/placeholder2.png"]}; let mediaIndex={dfs1:0};
+function cycleMedia(id){ const img=document.querySelector("#"+id+"-media img"); if(!img)return; mediaIndex[id]=(mediaIndex[id]+1)%mediaAssets[id].length; img.src=mediaAssets[id][mediaIndex[id]]; }
+document.addEventListener("DOMContentLoaded",()=>{ 
+    document.querySelectorAll(".nav-btn").forEach(b=>{ b.addEventListener("click",()=>loadPage(b.getAttribute("data-page"))); }); 
+    loadPage("home"); 
+});
