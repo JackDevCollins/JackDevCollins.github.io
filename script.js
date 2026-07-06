@@ -1,4 +1,4 @@
-﻿
+
 const pages = {
     home: `<section class="page-section page-home">
         <div class="status-container"><div class="status-msg">ACCESSING_SECURE_PORTAL... [SUCCESS]</div></div>
@@ -15,89 +15,357 @@ const pages = {
             <p style="margin-top:10px; font-family:monospace; color:var(--terminal-green);">CONTACT: <a href="mailto:JackofallDev@gmail.com" class="no-scramble" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--terminal-green);">JackofallDev@gmail.com</a></p>
         </div>
         <div class="links-section">
-            <a href=\"https://www.linkedin.com/in/jack-collins-gaming/\" target=\"_blank\" class=\"diegetic-button-static no-scramble\">LINKEDIN_ENTRY.EXE</a>
-            <a href=\"https://github.com/JackDevCollins\" target=\"_blank\" class=\"diegetic-button-static no-scramble\">GIT_REPOSITORY.EXE</a>
+            <a href="https://www.linkedin.com/in/jack-collins-gaming/" target="_blank" class="diegetic-button-static no-scramble">LINKEDIN_ENTRY.EXE</a>
+            <a href="https://github.com/JackDevCollins" target="_blank" class="diegetic-button-static no-scramble">GIT_REPOSITORY.EXE</a>
         </div></section>`,
+
     work: `<section class="page-section page-work">
         <div class="status-container"><div class="status-msg">ACCESSING_SOLO_ASSIGNMENTS... [DECRYPTING]</div></div>
         <h2 style="color:var(--blue-accent);" class="scramble-target">INDIV_STUDIES</h2>
         <div class="work-grid">
             <div class="work-card terminal-frame glitch-target glitch-active">
-                <h3 class="scramble-target">PROJECT: DFS01 OpenXR</h3>
-                <div class="media-container" id="dfs1-media"><img src="images/placeholder.png" class="current-media"><div class="media-controls"><button class="diegetic-button-static mini no-scramble" id="cycle-dfs1">CYCLE_FEED</button></div></div>
-                <p class="scramble-target">Advanced spatial algorithm implementation and OpenXR integration.</p>
+                <h3 class="scramble-target">PROJECT: DFS1 - OpenXR integration into custom engine</h3>
+                <div class="media-container" id="dfs1-media">
+                    <img src="images/placeholders/mon1.png" class="current-media">
+                    <div class="media-controls">
+                        <button class="diegetic-button-static mini no-scramble" id="cycle-dfs1">CYCLE_FEED</button>
+                    </div>
+                </div>
+                <p class="scramble-target">Advanced spatial algorithm implementation and OpenXR integration built directly inside a custom engine.</p>
             </div>
         </div></section>`,
+
     team: `<section class="page-section page-team">
         <div class="status-container"><div class="status-msg">ACCESSING_JOINT_INITIATIVES... [AUTHORIZED]</div></div>
         <h2 style="color:var(--terminal-green);" class="scramble-target">TEAM_COLLABORATIONS</h2>
         <div class="team-sections">
             <div class="team-project terminal-frame glitch-target">
                 <h3 class="scramble-target">PROJECT: Splitter Cell</h3>
-                <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
-                <p class="scramble-target">Collaborative stealth-action mechanics development.</p>
+                <div class="media-container" id="splitter-media">
+                    <img src="images/content/Splitter_Cell/Game Poster.png" class="current-media">
+                    <div class="media-controls">
+                        <button class="diegetic-button-static mini no-scramble" id="prev-splitter">PREV_FEED</button>
+                        <span id="counter-splitter" style="font-family:monospace; color:var(--terminal-green); font-size:0.8rem;">1 / 16</span>
+                        <button class="diegetic-button-static mini no-scramble" id="next-splitter">NEXT_FEED</button>
+                    </div>
+                </div>
+                <p class="scramble-target">Collaborative stealth-action mechanics development, featuring advanced tactical pathfinding and lighting-based detection systems.</p>
             </div>
             <div class="team-project terminal-frame glitch-target glitch-active">
-                <h3 class="scramble-target">PROJECT: Hamster Ballin</h2>
-                <div class="gallery-container"><div class="gallery-scroll"><img src="images/placeholder.png"><img src="images/placeholder.png"></div></div>
-                <p class="scramble-target">Cooperative development of physics-based locomotion systems.</p>
+                <h3 class="scramble-target">PROJECT: Hamster Ballin'</h3>
+                <div class="media-container single-image">
+                    <img src="images/content/Hamster_Ballin'/WebPoster_280x360.png" class="current-media">
+                </div>
+                <p class="scramble-target">Cooperative development of physics-based locomotion systems, multiplayer controller management, UI screens, and core QA debug engines.</p>
             </div>
         </div></section>`,
+
     personal: `<section class="page-section page-personal">
         <div class="status-container"><div class="status-msg">ACCESSING_PERSONNEL_DOSSIER... [AUTHENTICATED]</div></div>
-        <h2 style=\"color:var(--alert-red);\" class="scramble-target">PERSONNEL DOSSIER</h2>
-        <div class=\"dossier-grid\">
-            <div class=\"dossier-left\">
-                <div class=\"portrait-container terminal-frame glitch-target glitch-active\">
-                    <img src=\"images/content/headshot.jpg\" class=\"portrait\">
+        <h2 style="color:var(--alert-red);" class="scramble-target">PERSONNEL DOSSIER</h2>
+        <div class="dossier-grid">
+            <div class="dossier-left">
+                <div class="portrait-container terminal-frame glitch-target glitch-active">
+                    <img src="images/content/headshot.jpg" class="portrait">
                 </div>
-                <div class=\"info-block terminal-frame glitch-target\">
+                <div class="info-block terminal-frame glitch-target">
                     <p class="scramble-target"><strong>NAME:</strong> JACK COLLINS</p>
                     <p class="scramble-target"><strong>ID:</strong> FAC-942-JS</p>
-                    <p><strong>EMAIL:</strong> <a href="mailto:JackCollStack@outlook.com" class="no-scramble" style="color:inherit;">JackCollStack@outlook.com</a></p>
+                    <p><strong>EMAIL:</strong> <a href="mailto:jackcallstack@outlook.com" class="no-scramble" style="color:inherit;">jackcallstack@outlook.com</a></p>
+                    <p class="scramble-target"><strong>SECTOR:</strong> GAME PROGRAMMING</p>
+                    <div style="margin-top:15px; display:flex; flex-direction:column; gap:8px;">
+                        <a href="images/content/Documents/jack_collins_resume.md" download class="diegetic-button-static mini no-scramble" style="text-align:center; font-size:0.7rem; display:block;">DOWNLOAD_RAW.MD</a>
+                    </div>
                 </div>
             </div>
-            <div class=\"dossier-right\">
-                <div class=\"terminal-frame glitch-target\">
-                    <h3 class="scramble-target">EDUCATION_HISTORY</h3>
-                    <div class=\"edu-entry\"><p class="scramble-target"><strong>SMU GUILDHALL</strong> [2025-2027]</p><p class="scramble-target">Master of Science: Game Programming</p></div>
-                </div>
-                <div class=\"terminal-frame glitch-target\">
-                    <h3 class="scramble-target">SYSTEM_CAPABILITIES</h3>
-                    <div style=\"display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-size:0.8rem; font-family:monospace;\">
-                        <div><p class="scramble-target">> UNREAL ENGINE 5/4</p><p class="scramble-target">> BLUEPRINTING</p></div>
-                        <div><p class="scramble-target">> SUBSTANCE SUITE</p><p class="scramble-target">> C++ / HOUDINI</p></div>
-                    </div>
+            <div class="dossier-right">
+                <div class="terminal-frame glitch-target" id="resume-container" style="max-height: 520px; overflow-y: auto; padding-right: 10px;">
+                    <h3 class="scramble-target">DECRYPTING_DOSSIER...</h3>
+                    <p style="font-family:monospace; font-size:0.8rem;">Connecting to resume database at /images/content/Documents/jack_collins_resume.md...</p>
                 </div>
             </div>
         </div></section>`
 };
 
-function loadPage(p){ 
-    const a=document.getElementById("content-area"); if(!a)return; 
-    a.innerHTML=pages[p]||"<h1>404</h1>"; 
-    document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
-    const act=document.getElementById("nav-"+p); if(act)act.classList.add("active");
-    if(p==="work"){const c=document.getElementById("cycle-dfs1"); if(c)c.onclick=()=>cycleMedia("dfs1");}
-    a.scrollTop=0; 
+// Retro Terminal Audio Synthesizer (Web Audio API)
+let audioEnabled = true;
+const SoundManager = {
+    ctx: null,
+    init() {
+        if (!this.ctx) {
+            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (this.ctx.state === 'suspended') {
+            this.ctx.resume();
+        }
+    },
+    playHover() {
+        if (!audioEnabled) return;
+        try {
+            this.init();
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(850, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(1250, this.ctx.currentTime + 0.04);
+            
+            gain.gain.setValueAtTime(0.012, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.04);
+            
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start();
+            osc.stop(this.ctx.currentTime + 0.04);
+        } catch (e) { console.warn(e); }
+    },
+    playClick() {
+        if (!audioEnabled) return;
+        try {
+            this.init();
+            // Blip tone
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(130, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(50, this.ctx.currentTime + 0.1);
+            
+            gain.gain.setValueAtTime(0.035, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.1);
+            
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start();
+            osc.stop(this.ctx.currentTime + 0.1);
+            
+            // Noise click
+            const bufferSize = this.ctx.sampleRate * 0.015;
+            const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+            
+            const noise = this.ctx.createBufferSource();
+            noise.buffer = buffer;
+            const noiseGain = this.ctx.createGain();
+            noiseGain.gain.setValueAtTime(0.018, this.ctx.currentTime);
+            noiseGain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.015);
+            
+            noise.connect(noiseGain);
+            noiseGain.connect(this.ctx.destination);
+            noise.start();
+        } catch (e) { console.warn(e); }
+    },
+    playGlitch() {
+        if (!audioEnabled) return;
+        try {
+            this.init();
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(55, this.ctx.currentTime);
+            gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.2);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start();
+            osc.stop(this.ctx.currentTime + 0.2);
+        } catch (e) { console.warn(e); }
+    }
+};
+
+// Bind sound effects to all interactive elements
+function attachSoundEvents(parent = document) {
+    parent.querySelectorAll("button, a, .nav-btn, .diegetic-button-static").forEach(el => {
+        if (!el.dataset.soundBound) {
+            el.dataset.soundBound = "true";
+            el.addEventListener("mouseenter", () => SoundManager.playHover());
+            el.addEventListener("mousedown", () => SoundManager.playClick());
+        }
+    });
 }
 
+// Media Assets Lists
+const mediaAssets = {
+    dfs1: [
+        "images/placeholders/mon1.png",
+        "images/placeholders/mon2.png",
+        "images/placeholders/mon3.png"
+    ],
+    splitter: [
+        "images/content/Splitter_Cell/Game Poster.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114430.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114441.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114525.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114541.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114557.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114617.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114719.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114752.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114821.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 114933.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 115005.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 115016.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 115034.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 115053.png",
+        "images/content/Splitter_Cell/Screenshot 2025-12-01 115115.png"
+    ]
+};
+let mediaIndex = { dfs1: 0, splitter: 0 };
+
+function cycleMedia(id, direction = 1) {
+    const container = document.getElementById(id + "-media");
+    if (!container) return;
+    const img = container.querySelector("img");
+    if (!img) return;
+    
+    mediaIndex[id] = (mediaIndex[id] + direction + mediaAssets[id].length) % mediaAssets[id].length;
+    img.src = mediaAssets[id][mediaIndex[id]];
+    
+    const counter = document.getElementById("counter-" + id);
+    if (counter) {
+        counter.innerText = `${mediaIndex[id] + 1} / ${mediaAssets[id].length}`;
+    }
+}
+
+// Markdown Parser logic
+function parseMarkdown(md) {
+    // Strip YAML frontmatter
+    let html = md.replace(/^---[\s\S]*?---/, '');
+    
+    const lines = html.split('\n');
+    let parsed = '';
+    let inList = false;
+    
+    for (let line of lines) {
+        line = line.trim();
+        if (!line) {
+            if (inList) { parsed += '</ul>'; inList = false; }
+            continue;
+        }
+        
+        if (line === '---') {
+            if (inList) { parsed += '</ul>'; inList = false; }
+            parsed += '<hr class="dossier-hr">';
+            continue;
+        }
+        
+        if (line.startsWith('# ')) {
+            if (inList) { parsed += '</ul>'; inList = false; }
+            parsed += `<h1 class="dossier-h1">${line.substring(2)}</h1>`;
+            continue;
+        }
+        if (line.startsWith('## ')) {
+            if (inList) { parsed += '</ul>'; inList = false; }
+            parsed += `<h2 class="dossier-h2">${line.substring(3)}</h2>`;
+            continue;
+        }
+        if (line.startsWith('### ')) {
+            if (inList) { parsed += '</ul>'; inList = false; }
+            parsed += `<h3 class="dossier-h3">${line.substring(4)}</h3>`;
+            continue;
+        }
+        
+        if (line.startsWith('- ') || line.startsWith('* ')) {
+            if (!inList) { parsed += '<ul class="dossier-list">'; inList = true; }
+            parsed += `<li>${parseInlineMarkdown(line.substring(2))}</li>`;
+            continue;
+        }
+        
+        if (inList) { parsed += '</ul>'; inList = false; }
+        parsed += `<p class="dossier-p">${parseInlineMarkdown(line)}</p>`;
+    }
+    if (inList) parsed += '</ul>';
+    return parsed;
+}
+
+function parseInlineMarkdown(text) {
+    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="dossier-link">$1</a>');
+    return text;
+}
+
+function loadPage(p) {
+    const a = document.getElementById("content-area"); 
+    if (!a) return; 
+    a.innerHTML = pages[p] || "<h1>404</h1>"; 
+    
+    document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+    const act = document.getElementById("nav-" + p); 
+    if (act) act.classList.add("active");
+    
+    // Page-specific setup
+    if (p === "work") {
+        const c = document.getElementById("cycle-dfs1"); 
+        if (c) c.onclick = () => cycleMedia("dfs1", 1);
+    } else if (p === "team") {
+        const prev = document.getElementById("prev-splitter");
+        const next = document.getElementById("next-splitter");
+        if (prev) prev.onclick = () => cycleMedia("splitter", -1);
+        if (next) next.onclick = () => cycleMedia("splitter", 1);
+    } else if (p === "personal") {
+        fetch("images/content/Documents/jack_collins_resume.md")
+            .then(res => {
+                if (!res.ok) throw new Error("Resume not found");
+                return res.text();
+            })
+            .then(text => {
+                const container = document.getElementById("resume-container");
+                if (container) container.innerHTML = parseMarkdown(text);
+                attachSoundEvents(container);
+            })
+            .catch(err => {
+                const container = document.getElementById("resume-container");
+                if (container) container.innerHTML = `<h3 style="color:var(--alert-red);">DOSSIER_ACCESS_DENIED</h3><p style="color:var(--alert-red); font-family:monospace; margin-top:10px;">ERROR: FAILED_TO_DECRYPT_DOSSIER_FILE (${err.message})</p>`;
+            });
+    }
+    
+    a.scrollTop = 0; 
+    attachSoundEvents(a);
+}
+
+// Scramble Animation
 const scrambles = { "o": "0", "O": "0", "s": "$", "S": "$", "a": "@", "A": "@", "e": "3", "E": "3", "i": "1", "I": "1" };
 function scrambleText() {
     document.querySelectorAll(".scramble-target:not(.no-scramble)").forEach(el => {
-        if (Math.random() > 0.80) {
+        if (Math.random() > 0.85) {
             const original = el.innerText;
-            const scrambled = original.split("").map(char => (scrambles[char] && Math.random() > 0.6) ? scrambles[char] : char).join("");
+            const scrambled = original.split("").map(char => (scrambles[char] && Math.random() > 0.65) ? scrambles[char] : char).join("");
             el.innerText = scrambled;
-            setTimeout(() => { el.innerText = original; }, 150);
+            setTimeout(() => { el.innerText = original; }, 180);
+            
+            // Occasional glitch hum sound when text scrambles
+            if (Math.random() > 0.95) {
+                SoundManager.playGlitch();
+            }
         }
     });
 }
 setInterval(scrambleText, 3000);
 
-const mediaAssets={dfs1:["images/placeholder.png","images/placeholder2.png"]}; let mediaIndex={dfs1:0};
-function cycleMedia(id){ const img=document.querySelector("#"+id+"-media img"); if(!img)return; mediaIndex[id]=(mediaIndex[id]+1)%mediaAssets[id].length; img.src=mediaAssets[id][mediaIndex[id]]; }
-document.addEventListener("DOMContentLoaded",()=>{ 
-    document.querySelectorAll(".nav-btn").forEach(b=>{ b.addEventListener("click",()=>loadPage(b.getAttribute("data-page"))); }); 
+document.addEventListener("DOMContentLoaded", () => { 
+    // Navigation hooks
+    document.querySelectorAll(".nav-btn").forEach(b => { 
+        b.addEventListener("click", () => loadPage(b.getAttribute("data-page"))); 
+    }); 
+    
+    // Audio Toggle hook
+    const audioBtn = document.getElementById("audio-toggle");
+    if (audioBtn) {
+        audioBtn.addEventListener("click", () => {
+            audioEnabled = !audioEnabled;
+            if (audioEnabled) {
+                audioBtn.innerText = "SPKR: ON";
+                audioBtn.classList.remove("muted");
+                SoundManager.playClick();
+            } else {
+                audioBtn.innerText = "SPKR: OFF";
+                audioBtn.classList.add("muted");
+            }
+        });
+    }
+    
+    attachSoundEvents(document);
     loadPage("home"); 
 });

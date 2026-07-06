@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
@@ -12,14 +12,23 @@
         <aside class='sidebar terminal-frame'>
             <div class='sidebar-header'>
                 <div class="jdc-logo-container">
-                    <div class="jdc-glyph">
-                        <div class="glyph-face j-face">J</div>
-                        <div class="glyph-face d-face">D</div>
-                        <div class="glyph-face c-face">C</div>
+                    <div class="jdc-glyph-3d">
+                        <!-- Stacked SVG layers to create extruded 3D JDC-Lambda logo -->
+                        <svg class="logo-layer layer-0" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-1" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-2" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-3" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-4" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-5" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-6" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
+                        <svg class="logo-layer layer-7" viewBox="0 0 100 100"><path d="M 50 15 L 35 70 C 33 78, 20 78, 20 65 M 41 42 C 55 35, 68 35, 68 48 C 68 60, 52 58, 41 55 M 42 53 C 53 62, 68 72, 68 80 C 68 85, 78 85, 78 80" /></svg>
                     </div>
                 </div>
                 <h2>ARCHIVE_01</h2>
-                <p class='status'>DATA_PORTAL: ONLINE</p>
+                <div class="header-status-row">
+                    <p class='status'>DATA_PORTAL: ONLINE</p>
+                    <button id="audio-toggle" class="audio-btn" title="Toggle Terminal Audio">SPKR: ON</button>
+                </div>
             </div>
             <nav class='sidebar-nav'>
                 <div class='button-container'><button class='nav-btn diegetic-button' data-page='home' id='nav-home'>HOME</button></div>

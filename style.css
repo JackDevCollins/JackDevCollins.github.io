@@ -1,4 +1,4 @@
-﻿
+
 :root {
     --lambda-orange: #FF9F00;
     --concrete-grey: #4A4A4A;
@@ -10,26 +10,93 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background-color: var(--dark-bg); color: var(--lambda-orange); font-family: "Trebuchet MS", sans-serif; overflow: hidden; position: relative; }
+body { 
+    background-color: #101010; 
+    color: var(--lambda-orange); 
+    font-family: "Trebuchet MS", sans-serif; 
+    overflow: hidden; 
+    position: relative; 
+    height: 100vh; 
+    width: 100vw; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 14px;
+}
 
-.app-container { display: flex; height: 100vh; width: 100vw; position: relative; z-index: 2; }
+/* CRT Screen Frame & Bezel */
+.app-container { 
+    display: flex; 
+    height: 100%; 
+    width: 100%; 
+    position: relative; 
+    z-index: 2; 
+    border-radius: 20px; 
+    overflow: hidden; 
+    border: 14px solid #222222; 
+    outline: 4px solid #1a1a1a;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.95), 0 15px 40px rgba(0,0,0,0.85); 
+}
 
-/* CRT Effects */
-#crt-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03)); background-size: 100% 3px, 3px 100%; }
-#crt-overlay::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100px; background: linear-gradient(to bottom, transparent, rgba(255, 159, 0, 0.05), transparent); animation: scanline 8s linear infinite; }
-@keyframes scanline { from { top: -100px; } to { top: 100%; } }
+/* CRT Overlay effects with curvature simulation */
+#crt-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    pointer-events: none; 
+    z-index: 1000; 
+    border-radius: 8px;
+    background: 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), 
+        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)),
+        radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.75) 100%),
+        linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 25%, transparent 26%); 
+    background-size: 100% 4px, 4px 100%, 100% 100%, 100% 100%; 
+}
+#crt-overlay::after { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 120px; 
+    background: linear-gradient(to bottom, transparent, rgba(255, 159, 0, 0.04), transparent); 
+    animation: scanline 9s linear infinite; 
+}
+@keyframes scanline { from { top: -120px; } to { top: 100%; } }
 
 /* Sidebar & Logo */
 .sidebar { width: 280px; background: var(--monitor-bg); border-right: 4px solid var(--concrete-grey); display: flex; flex-direction: column; padding: 20px; z-index: 10; }
 .sidebar-header { text-align: center; }
 .sidebar-header h2 { font-size: 1.2rem; letter-spacing: 2px; text-shadow: 0 0 5px var(--lambda-orange); }
-.jdc-logo-container { width: 100px; height: 100px; perspective: 1000px; margin: 0 auto 20px auto; }
-.jdc-glyph { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: goldeneyeRotate 6s infinite linear; }
-.glyph-face { position: absolute; width: 40px; height: 80px; background: linear-gradient(135deg, var(--lambda-orange) 0%, #b37100 100%); border: 1px solid #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 40px; color: #fff; text-shadow: 2px 2px 0 #000; box-shadow: 0 0 15px var(--lambda-orange); }
-.j-face { transform: rotateY(0deg) translateZ(20px); left: 30px; }
-.d-face { transform: rotateY(120deg) translateZ(20px); left: 30px; }
-.c-face { transform: rotateY(240deg) translateZ(20px); left: 30px; }
-@keyframes goldeneyeRotate { 0% { transform: rotateY(0deg) rotateX(10deg); } 50% { transform: rotateY(180deg) rotateX(-10deg); } 100% { transform: rotateY(360deg) rotateX(10deg); } }
+
+.header-status-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; border-top: 1px solid rgba(255, 159, 0, 0.2); padding-top: 6px; }
+.audio-btn { background: #333; border: 2px solid #555; color: var(--terminal-green); font-family: monospace; font-size: 0.75rem; font-weight: bold; padding: 3px 8px; cursor: pointer; transition: all 0.1s; border-radius: 2px; }
+.audio-btn:hover { border-color: var(--terminal-green); box-shadow: 0 0 5px var(--terminal-green); }
+.audio-btn.muted { color: var(--alert-red); border-color: #622; }
+.audio-btn.muted:hover { border-color: var(--alert-red); box-shadow: 0 0 5px var(--alert-red); }
+
+.jdc-logo-container { width: 100px; height: 100px; perspective: 1000px; margin: 0 auto 20px auto; position: relative; }
+.jdc-glyph-3d { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: rotate3dLogo 8s infinite linear; }
+.logo-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; fill: none; stroke: var(--lambda-orange); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 3px rgba(255, 159, 0, 0.5)); }
+
+/* Z-Offset Stack for 3D Extrusion */
+.layer-0 { transform: translateZ(-3.5px); stroke: #402800; }
+.layer-1 { transform: translateZ(-2.5px); stroke: #664000; }
+.layer-2 { transform: translateZ(-1.5px); stroke: #8c5800; }
+.layer-3 { transform: translateZ(-0.5px); stroke: #b37100; }
+.layer-4 { transform: translateZ(0.5px); stroke: #d98900; }
+.layer-5 { transform: translateZ(1.5px); stroke: #ff9f00; }
+.layer-6 { transform: translateZ(2.5px); stroke: #ffa91f; }
+.layer-7 { transform: translateZ(3.5px); stroke: #ffc466; filter: drop-shadow(0 0 8px var(--lambda-orange)); }
+
+@keyframes rotate3dLogo {
+    0% { transform: rotateY(0deg) rotateX(15deg); }
+    50% { transform: rotateY(180deg) rotateX(-5deg); }
+    100% { transform: rotateY(360deg) rotateX(15deg); }
+}
 
 .sidebar-nav { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1; }
 .button-container { height: 48px; position: relative; width: 100%; }
@@ -82,16 +149,70 @@ body { background-color: var(--dark-bg); color: var(--lambda-orange); font-famil
 .hero-video-bg { width: 100%; height: 250px; background: #000; overflow: hidden; position: relative; border: 2px solid var(--concrete-grey); margin: 15px 0; }
 .hero-video-bg video { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(1) contrast(1.5) blur(1px); }
 
-.dossier-grid { display: grid; grid-template-columns: 180px 1fr; gap: 30px; align-items: start; }
-.portrait-container { width: 150px; height: 180px; background: #000; overflow: hidden; border: 3px solid var(--concrete-grey); position: relative; }
-.portrait { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.2) contrast(1.4) brightness(0.9) grayscale(0.2); image-rendering: pixelated; }
+.dossier-grid { display: grid; grid-template-columns: 200px 1fr; gap: 30px; align-items: start; }
+.portrait-container { width: 170px; height: 200px; background: #000; overflow: hidden; border: 3px solid var(--concrete-grey); position: relative; }
+.portrait { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.25) contrast(1.3) brightness(0.85) grayscale(0.15); image-rendering: pixelated; }
 
-.diegetic-button-static { background: var(--concrete-grey); border: 3px solid #666; border-bottom: 4px solid #333; border-right: 4px solid #333; color: var(--lambda-orange); padding: 8px 15px; font-weight: bold; text-decoration: none; cursor: pointer; display: inline-block; transition: all 0.1s; }
-.diegetic-button-static:hover { border-color: #fff; color: #fff; box-shadow: 0 0 10px #fff; }
+.diegetic-button-static { 
+    background: var(--concrete-grey); 
+    border: 3px solid #666; 
+    border-bottom: 5px solid #333; 
+    border-right: 5px solid #333; 
+    color: var(--lambda-orange); 
+    padding: 8px 15px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    cursor: pointer; 
+    display: inline-block; 
+    transition: none; 
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+.diegetic-button-static:hover { border-color: var(--lambda-orange); color: #fff; box-shadow: 0 0 10px var(--lambda-orange); }
+.diegetic-button-static:active { transform: translate(2px, 2px); border-bottom-width: 2px; border-right-width: 2px; }
+.diegetic-button-static.mini { padding: 4px 10px; font-size: 0.75rem; }
 
-.gallery-scroll { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 15px; }
-.gallery-scroll img { height: 180px; border: 2px solid var(--concrete-grey); }
+/* Media Feed Containers */
+.media-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+    border: 2px solid var(--concrete-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    overflow: hidden;
+}
+.media-container img.current-media {
+    max-width: 100%;
+    height: 280px;
+    object-fit: contain;
+    display: block;
+}
+.media-controls {
+    width: 100%;
+    background: rgba(30, 30, 30, 0.95);
+    border-top: 2px solid var(--concrete-grey);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Resume/Dossier Markdown Rendering Styles */
+.dossier-h1 { font-size: 1.5rem; border-bottom: 2px solid var(--alert-red); padding-bottom: 5px; margin: 15px 0 10px 0; color: #fff; font-family: monospace; }
+.dossier-h2 { font-size: 1.15rem; color: var(--alert-red); margin: 20px 0 10px 0; font-family: monospace; border-bottom: 1px dashed rgba(255, 48, 48, 0.3); padding-bottom: 3px; }
+.dossier-h3 { font-size: 0.95rem; color: #ff8080; margin: 12px 0 6px 0; font-family: monospace; }
+.dossier-p { font-size: 0.85rem; margin-bottom: 10px; line-height: 1.4; font-family: monospace; color: #ccc; }
+.dossier-list { margin-left: 20px; margin-bottom: 12px; font-family: monospace; font-size: 0.85rem; color: #bbb; list-style-type: square; }
+.dossier-list li { margin-bottom: 4px; }
+.dossier-link { color: var(--alert-red); text-decoration: none; border-bottom: 1px dashed var(--alert-red); }
+.dossier-link:hover { color: #fff; border-color: #fff; }
+.dossier-hr { border: 0; border-top: 1px solid rgba(255, 48, 48, 0.2); margin: 15px 0; }
 
 .page-section { animation: glitchIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
-@keyframes glitchIn { 0% { transform: scale(1.1); filter: brightness(3); opacity: 0; } 100% { transform: scale(1); filter: brightness(1); opacity: 1; } }
+@keyframes glitchIn { 0% { transform: scale(1.05); filter: brightness(3); opacity: 0; } 100% { transform: scale(1); filter: brightness(1); opacity: 1; } }
 
