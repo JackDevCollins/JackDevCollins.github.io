@@ -35,14 +35,14 @@ body {
     overflow: hidden; 
     border: 16px solid #202020; 
     outline: 6px solid #141414;
-    box-shadow: inset 0 0 110px rgba(0,0,0,1), 0 15px 40px rgba(0,0,0,0.9); 
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.6), 0 15px 40px rgba(0,0,0,0.9); 
 }
 .app-container::after {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 8px;
-    box-shadow: inset 0 0 35px rgba(255, 159, 0, 0.12), inset 0 0 12px rgba(0, 255, 0, 0.08);
+    box-shadow: inset 0 0 25px rgba(255, 159, 0, 0.1), inset 0 0 8px rgba(0, 255, 0, 0.05);
     pointer-events: none;
     z-index: 999;
 }
@@ -58,10 +58,10 @@ body {
     z-index: 1000; 
     border-radius: 8px;
     background: 
-        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%), 
+        linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
         linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)),
-        radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.4) 60%, rgba(0, 0, 0, 0.8) 100%),
-        linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 20%, transparent 21%); 
+        radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.15) 75%, rgba(0, 0, 0, 0.5) 100%),
+        linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 15%, transparent 16%); 
     background-size: 100% 4px, 4px 100%, 100% 100%, 100% 100%; 
 }
 #crt-overlay::after { 
