@@ -1,13 +1,13 @@
 
 const pages = {
     home: `<section class="page-section page-home">
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline><source src="images/content/hero_compressed.mp4" type="video/mp4"></video>
+        </div>
         <div class="status-container"><div class="status-msg">ACCESSING_SECURE_PORTAL... [SUCCESS]</div></div>
         <div class="hero terminal-frame glitch-target glitch-active">
             <h1 class="scramble-target">SUBJECT: JACK COLLINS</h1>
             <p class="subtitle scramble-target">STATUS: RESEARCHER | SECTOR: C (TESTING)</p>
-            <div class="hero-video-bg">
-                <video autoplay muted loop playsinline><source src="images/content/hero_compressed.mp4" type="video/mp4"></video>
-            </div>
         </div>
         <div class="bio-section terminal-frame glitch-target">
             <h3 class="scramble-target">PERSONNEL BIO</h3>
@@ -92,26 +92,14 @@ const pages = {
                     <p style="font-size:0.8rem; word-break:break-all;"><strong>EMAIL:</strong><br><a href="mailto:jackcallstack@outlook.com" class="no-scramble" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--alert-red);">jackcallstack@outlook.com</a></p>
                     <p class="scramble-target"><strong>SECTOR:</strong> SOFTWARE DEVELOPER</p>
                     <div style="margin-top:15px; display:flex; flex-direction:column; gap:8px;">
-                        <button onclick="loadResume()" class="diegetic-button-static mini no-scramble" style="text-align:center; font-size:0.75rem; display:block;">VIEW FULL RESUME</button>
                         <a href="./images/content/Documents/jack_collins_resume.md" download class="diegetic-button-static mini no-scramble" style="text-align:center; font-size:0.75rem; display:block;">DOWNLOAD_RAW.MD</a>
                     </div>
                 </div>
             </div>
             <div class="dossier-right">
-                <div id="default-dossier-info">
-                    <div class="terminal-frame glitch-target">
-                        <h3 class="scramble-target">EDUCATION_HISTORY</h3>
-                        <div class="edu-entry" style="margin-top:10px;"><p class="scramble-target" style="font-size:0.85rem;"><strong>SMU GUILDHALL</strong> [2025-2027]</p><p class="scramble-target" style="font-size:0.85rem;">Master of Science: Game Programming</p></div>
-                    </div>
-                    <div class="terminal-frame glitch-target" style="margin-top:15px;">
-                        <h3 class="scramble-target">SYSTEM_CAPABILITIES</h3>
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; font-size:0.8rem; font-family:monospace; margin-top:10px;">
-                            <div><p class="scramble-target">> UNREAL ENGINE 5/4</p><p class="scramble-target">> BLUEPRINTING</p></div>
-                            <div><p class="scramble-target">> SUBSTANCE SUITE</p><p class="scramble-target">> C++ / HOUDINI</p></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="terminal-frame glitch-target" id="resume-container" style="display:none; max-height: 520px; overflow-y: auto; padding-right: 12px;">
+                <div class="terminal-frame glitch-target" id="resume-container" style="max-height: 520px; overflow-y: auto; padding-right: 12px;">
+                    <h3 class="scramble-target">DECRYPTING_DOSSIER...</h3>
+                    <p style="font-family:monospace; font-size:0.8rem;">Connecting to resume database at /images/content/Documents/jack_collins_resume.md...</p>
                 </div>
             </div>
         </div></section>`
@@ -338,35 +326,26 @@ function loadPage(p) {
         const next = document.getElementById("next-splitter");
         if (prev) prev.onclick = () => cycleMedia("splitter", -1);
         if (next) next.onclick = () => cycleMedia("splitter", 1);
+    } else if (p === "personal") {
+        fetch("./images/content/Documents/jack_collins_resume.md")
+            .then(res => {
+                if (!res.ok) throw new Error("Resume not found");
+                return res.text();
+            })
+            .then(text => {
+                const container = document.getElementById("resume-container");
+                if (container) container.innerHTML = parseMarkdown(text);
+                attachSoundEvents(container);
+            })
+            .catch(err => {
+                const container = document.getElementById("resume-container");
+                if (container) container.innerHTML = `<h3 style="color:var(--alert-red);">DOSSIER_ACCESS_DENIED</h3><p style="color:var(--alert-red); font-family:monospace; margin-top:10px;">ERROR: FAILED_TO_DECRYPT_DOSSIER_FILE (${err.message})</p>`;
+            });
     }
     
     a.scrollTop = 0; 
     attachSoundEvents(a);
 }
-
-window.loadResume = function() {
-    const container = document.getElementById("resume-container");
-    const defaultInfo = document.getElementById("default-dossier-info");
-    if (!container || !defaultInfo) return;
-    
-    defaultInfo.style.display = "none";
-    container.style.display = "block";
-    container.innerHTML = `<h3 class="scramble-target">DECRYPTING_DOSSIER...</h3><p style="font-family:monospace; font-size:0.8rem;">Connecting to resume database...</p>`;
-    SoundManager.playClick();
-    
-    fetch("./images/content/Documents/jack_collins_resume.md")
-        .then(res => {
-            if (!res.ok) throw new Error("Resume not found");
-            return res.text();
-        })
-        .then(text => {
-            container.innerHTML = parseMarkdown(text);
-            attachSoundEvents(container);
-        })
-        .catch(err => {
-            container.innerHTML = `<h3 style="color:var(--alert-red);">DOSSIER_ACCESS_DENIED</h3><p style="color:var(--alert-red); font-family:monospace; margin-top:10px;">ERROR: FAILED_TO_DECRYPT_DOSSIER_FILE (${err.message})</p>`;
-        });
-};
 
 // Scramble Animation
 const scrambles = { "o": "0", "O": "0", "s": "$", "S": "$", "a": "@", "A": "@", "e": "3", "E": "3", "i": "1", "I": "1" };
