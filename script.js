@@ -12,26 +12,30 @@ const pages = {
         <div class="bio-section terminal-frame glitch-target">
             <h3 class="scramble-target">PERSONNEL BIO</h3>
             <p class="scramble-target">Specialized in immersive systems and technical design. Accessing contact data...</p>
-            <p style="margin-top:10px; font-family:monospace; color:var(--terminal-green);">CONTACT: <a href="mailto:JackofallDev@gmail.com" class="no-scramble" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--terminal-green);">JackofallDev@gmail.com</a></p>
+            <p style="margin-top:10px; font-family:monospace; color:var(--terminal-green);">CONTACT: <a href="mailto:jackcallstack@outlook.com" class="no-scramble" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--terminal-green);">jackcallstack@outlook.com</a></p>
         </div>
         <div class="links-section">
-            <a href="https://www.linkedin.com/in/jack-collins-gaming/" target="_blank" class="diegetic-button-static no-scramble">LINKEDIN_ENTRY.EXE</a>
-            <a href="https://github.com/JackDevCollins" target="_blank" class="diegetic-button-static no-scramble">GIT_REPOSITORY.EXE</a>
+            <a href="https://www.linkedin.com/in/jack-collins-gaming/" target="_blank" class="diegetic-button-static no-scramble">LINKEDIN_ENTRY</a>
+            <a href="https://github.com/JackDevCollins" target="_blank" class="diegetic-button-static no-scramble">GIT_REPOSITORY</a>
         </div></section>`,
 
     work: `<section class="page-section page-work">
         <div class="status-container"><div class="status-msg">ACCESSING_SOLO_ASSIGNMENTS... [DECRYPTING]</div></div>
-        <h2 style="color:var(--blue-accent);" class="scramble-target">INDIV_STUDIES</h2>
+        <h2 style="color:var(--blue-accent);" class="scramble-target">INDIVIDUAL WORKS</h2>
         <div class="work-grid">
             <div class="work-card terminal-frame glitch-target glitch-active">
-                <h3 class="scramble-target">PROJECT: DFS1 - OpenXR integration into custom engine</h3>
-                <div class="media-container" id="dfs1-media">
-                    <img src="images/placeholders/mon1.png" class="current-media">
-                    <div class="media-controls">
-                        <button class="diegetic-button-static mini no-scramble" id="cycle-dfs1">CYCLE_FEED</button>
+                <div class="project-layout-grid">
+                    <div class="project-media-column">
+                        <div class="media-container" id="dfs1-media">
+                            <img src="images/content/dfs1_openxr.png" class="current-media">
+                        </div>
+                    </div>
+                    <div class="project-info-column">
+                        <h3 class="scramble-target">PROJECT: DFS1</h3>
+                        <p style="color:var(--blue-accent); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: ENGINE & GRAPHICS PROGRAMMER</p>
+                        <p class="scramble-target">Advanced spatial algorithm implementation and OpenXR integration built directly inside a custom game engine. Developed real-time stereo viewport rendering pipelines and native OpenXR projection matrix transformations.</p>
                     </div>
                 </div>
-                <p class="scramble-target">Advanced spatial algorithm implementation and OpenXR integration built directly inside a custom engine.</p>
             </div>
         </div></section>`,
 
@@ -40,46 +44,60 @@ const pages = {
         <h2 style="color:var(--terminal-green);" class="scramble-target">TEAM_COLLABORATIONS</h2>
         <div class="team-sections">
             <div class="team-project terminal-frame glitch-target">
-                <h3 class="scramble-target">PROJECT: Splitter Cell</h3>
-                <div class="media-container" id="splitter-media">
-                    <img src="images/content/Splitter_Cell/Game Poster.png" class="current-media">
-                    <div class="media-controls">
-                        <button class="diegetic-button-static mini no-scramble" id="prev-splitter">PREV_FEED</button>
-                        <span id="counter-splitter" style="font-family:monospace; color:var(--terminal-green); font-size:0.8rem;">1 / 16</span>
-                        <button class="diegetic-button-static mini no-scramble" id="next-splitter">NEXT_FEED</button>
+                <div class="project-layout-grid">
+                    <div class="project-media-column">
+                        <div class="media-container" id="splitter-media">
+                            <img src="images/content/Splitter_Cell/Game Poster.png" class="current-media">
+                            <div class="media-controls">
+                                <button class="diegetic-button-static mini no-scramble" id="prev-splitter">PREV_FEED</button>
+                                <span id="counter-splitter" style="font-family:monospace; color:var(--terminal-green); font-size:0.8rem;">1 / 16</span>
+                                <button class="diegetic-button-static mini no-scramble" id="next-splitter">NEXT_FEED</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info-column">
+                        <h3 class="scramble-target">PROJECT: Splitter Cell</h3>
+                        <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: MULTI-FACETED DEVELOPER</p>
+                        <p class="scramble-target">Collaborative stealth-action mechanics development, featuring advanced tactical pathfinding and lighting-based detection systems. Utilized custom shader variables to calculate player exposure indices relative to ambient shadow boundaries.</p>
                     </div>
                 </div>
-                <p class="scramble-target">Collaborative stealth-action mechanics development, featuring advanced tactical pathfinding and lighting-based detection systems.</p>
             </div>
             <div class="team-project terminal-frame glitch-target glitch-active">
-                <h3 class="scramble-target">PROJECT: Hamster Ballin'</h3>
-                <div class="media-container single-image">
-                    <img src="images/content/Hamster_Ballin'/WebPoster_280x360.png" class="current-media">
+                <div class="project-layout-grid">
+                    <div class="project-media-column">
+                        <div class="media-container single-image">
+                            <img src="images/content/Hamster_Ballin'/WebPoster_280x360.png" class="current-media" style="max-height:280px;">
+                        </div>
+                    </div>
+                    <div class="project-info-column">
+                        <h3 class="scramble-target">PROJECT: Hamster Ballin'</h3>
+                        <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: UI/UX PROGRAMMER</p>
+                        <p class="scramble-target">Cooperative development of physics-based locomotion systems, multiplayer controller management, UI screens, and core QA debug engines. Programmed screen flow architectures and responsive device assignment handlers.</p>
+                    </div>
                 </div>
-                <p class="scramble-target">Cooperative development of physics-based locomotion systems, multiplayer controller management, UI screens, and core QA debug engines.</p>
             </div>
         </div></section>`,
 
     personal: `<section class="page-section page-personal">
         <div class="status-container"><div class="status-msg">ACCESSING_PERSONNEL_DOSSIER... [AUTHENTICATED]</div></div>
-        <h2 style="color:var(--alert-red);" class="scramble-target">PERSONNEL DOSSIER</h2>
+        <h2 style="color:var(--alert-red);" class="scramble-target">DEVELOPER INFO</h2>
         <div class="dossier-grid">
             <div class="dossier-left">
                 <div class="portrait-container terminal-frame glitch-target glitch-active">
                     <img src="images/content/headshot.jpg" class="portrait">
                 </div>
-                <div class="info-block terminal-frame glitch-target">
+                <div class="info-block terminal-frame glitch-target" style="padding: 15px 12px; margin-top: 10px;">
                     <p class="scramble-target"><strong>NAME:</strong> JACK COLLINS</p>
                     <p class="scramble-target"><strong>ID:</strong> FAC-942-JS</p>
-                    <p><strong>EMAIL:</strong> <a href="mailto:jackcallstack@outlook.com" class="no-scramble" style="color:inherit;">jackcallstack@outlook.com</a></p>
-                    <p class="scramble-target"><strong>SECTOR:</strong> GAME PROGRAMMING</p>
+                    <p style="font-size:0.8rem; word-break:break-all;"><strong>EMAIL:</strong><br><a href="mailto:jackcallstack@outlook.com" class="no-scramble" style="color:inherit; text-decoration:none; border-bottom:1px dashed var(--alert-red);">jackcallstack@outlook.com</a></p>
+                    <p class="scramble-target"><strong>SECTOR:</strong> SOFTWARE DEVELOPER</p>
                     <div style="margin-top:15px; display:flex; flex-direction:column; gap:8px;">
-                        <a href="images/content/Documents/jack_collins_resume.md" download class="diegetic-button-static mini no-scramble" style="text-align:center; font-size:0.7rem; display:block;">DOWNLOAD_RAW.MD</a>
+                        <a href="images/content/Documents/jack_collins_resume.md" download class="diegetic-button-static mini no-scramble" style="text-align:center; font-size:0.75rem; display:block;">DOWNLOAD_RAW.MD</a>
                     </div>
                 </div>
             </div>
             <div class="dossier-right">
-                <div class="terminal-frame glitch-target" id="resume-container" style="max-height: 520px; overflow-y: auto; padding-right: 10px;">
+                <div class="terminal-frame glitch-target" id="resume-container" style="max-height: 520px; overflow-y: auto; padding-right: 12px;">
                     <h3 class="scramble-target">DECRYPTING_DOSSIER...</h3>
                     <p style="font-family:monospace; font-size:0.8rem;">Connecting to resume database at /images/content/Documents/jack_collins_resume.md...</p>
                 </div>
@@ -87,7 +105,7 @@ const pages = {
         </div></section>`
 };
 
-// Retro Terminal Audio Synthesizer (Web Audio API)
+// Retro Terminal Audio Synthesizer (Half-Life Console UI SFX)
 let audioEnabled = true;
 const SoundManager = {
     ctx: null,
@@ -106,55 +124,67 @@ const SoundManager = {
             const osc = this.ctx.createOscillator();
             const gain = this.ctx.createGain();
             
+            // Half-Life hover/focus pip: high pitch short sine sweep (1500Hz to 1100Hz)
             osc.type = 'sine';
-            osc.frequency.setValueAtTime(850, this.ctx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(1250, this.ctx.currentTime + 0.04);
+            osc.frequency.setValueAtTime(1500, this.ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(1100, this.ctx.currentTime + 0.035);
             
-            gain.gain.setValueAtTime(0.012, this.ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.04);
+            gain.gain.setValueAtTime(0.015, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.035);
             
             osc.connect(gain);
             gain.connect(this.ctx.destination);
             osc.start();
-            osc.stop(this.ctx.currentTime + 0.04);
+            osc.stop(this.ctx.currentTime + 0.035);
         } catch (e) { console.warn(e); }
     },
     playClick() {
         if (!audioEnabled) return;
         try {
             this.init();
-            // Blip tone
-            const osc = this.ctx.createOscillator();
-            const gain = this.ctx.createGain();
-            osc.type = 'square';
-            osc.frequency.setValueAtTime(130, this.ctx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(50, this.ctx.currentTime + 0.1);
             
-            gain.gain.setValueAtTime(0.035, this.ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.1);
+            const now = this.ctx.currentTime;
             
-            osc.connect(gain);
-            gain.connect(this.ctx.destination);
-            osc.start();
-            osc.stop(this.ctx.currentTime + 0.1);
+            // Half-Life click UI Sound: Double mechanical beep/pip with distinct frequencies
+            // Pulse 1
+            const osc1 = this.ctx.createOscillator();
+            const gain1 = this.ctx.createGain();
+            osc1.type = 'sine';
+            osc1.frequency.setValueAtTime(580, now);
+            gain1.gain.setValueAtTime(0.035, now);
+            gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+            osc1.connect(gain1);
+            gain1.connect(this.ctx.destination);
+            osc1.start(now);
+            osc1.stop(now + 0.03);
+
+            // Pulse 2 (offset by 25ms, lower frequency)
+            const osc2 = this.ctx.createOscillator();
+            const gain2 = this.ctx.createGain();
+            osc2.type = 'sine';
+            osc2.frequency.setValueAtTime(440, now + 0.025);
+            gain2.gain.setValueAtTime(0.03, now + 0.025);
+            gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.055);
+            osc2.connect(gain2);
+            gain2.connect(this.ctx.destination);
+            osc2.start(now + 0.025);
+            osc2.stop(now + 0.055);
             
-            // Noise click
-            const bufferSize = this.ctx.sampleRate * 0.015;
+            // Quiet mechanical noise click transient
+            const bufferSize = this.ctx.sampleRate * 0.012;
             const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
             const data = buffer.getChannelData(0);
             for (let i = 0; i < bufferSize; i++) {
                 data[i] = Math.random() * 2 - 1;
             }
-            
             const noise = this.ctx.createBufferSource();
             noise.buffer = buffer;
             const noiseGain = this.ctx.createGain();
-            noiseGain.gain.setValueAtTime(0.018, this.ctx.currentTime);
-            noiseGain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.015);
-            
+            noiseGain.gain.setValueAtTime(0.012, now);
+            noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.012);
             noise.connect(noiseGain);
             noiseGain.connect(this.ctx.destination);
-            noise.start();
+            noise.start(now);
         } catch (e) { console.warn(e); }
     },
     playGlitch() {
@@ -164,13 +194,13 @@ const SoundManager = {
             const osc = this.ctx.createOscillator();
             const gain = this.ctx.createGain();
             osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(55, this.ctx.currentTime);
-            gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.2);
+            osc.frequency.setValueAtTime(60, this.ctx.currentTime);
+            gain.gain.setValueAtTime(0.018, this.ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.15);
             osc.connect(gain);
             gain.connect(this.ctx.destination);
             osc.start();
-            osc.stop(this.ctx.currentTime + 0.2);
+            osc.stop(this.ctx.currentTime + 0.15);
         } catch (e) { console.warn(e); }
     }
 };
@@ -188,11 +218,6 @@ function attachSoundEvents(parent = document) {
 
 // Media Assets Lists
 const mediaAssets = {
-    dfs1: [
-        "images/placeholders/mon1.png",
-        "images/placeholders/mon2.png",
-        "images/placeholders/mon3.png"
-    ],
     splitter: [
         "images/content/Splitter_Cell/Game Poster.png",
         "images/content/Splitter_Cell/Screenshot 2025-12-01 114430.png",
@@ -212,7 +237,7 @@ const mediaAssets = {
         "images/content/Splitter_Cell/Screenshot 2025-12-01 115115.png"
     ]
 };
-let mediaIndex = { dfs1: 0, splitter: 0 };
+let mediaIndex = { splitter: 0 };
 
 function cycleMedia(id, direction = 1) {
     const container = document.getElementById(id + "-media");
@@ -296,10 +321,7 @@ function loadPage(p) {
     if (act) act.classList.add("active");
     
     // Page-specific setup
-    if (p === "work") {
-        const c = document.getElementById("cycle-dfs1"); 
-        if (c) c.onclick = () => cycleMedia("dfs1", 1);
-    } else if (p === "team") {
+    if (p === "team") {
         const prev = document.getElementById("prev-splitter");
         const next = document.getElementById("next-splitter");
         if (prev) prev.onclick = () => cycleMedia("splitter", -1);
@@ -336,7 +358,7 @@ function scrambleText() {
             setTimeout(() => { el.innerText = original; }, 180);
             
             // Occasional glitch hum sound when text scrambles
-            if (Math.random() > 0.95) {
+            if (Math.random() > 0.96) {
                 SoundManager.playGlitch();
             }
         }
