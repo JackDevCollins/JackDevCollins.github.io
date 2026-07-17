@@ -12,7 +12,7 @@ const pages = {
         <div class="status-container"><div class="status-msg">ACCESSING_SECURE_PORTAL... [SUCCESS]</div></div>
         <div class="hero terminal-frame glitch-target glitch-active">
             <h1 class="scramble-target">SUBJECT: JACK COLLINS</h1>
-            <p class="subtitle scramble-target">STATUS: GAME PROGRAMMER | 4 SHIPPED TITLES</p>
+            <p class="subtitle scramble-target">STATUS: GAME PROGRAMMER</p>
         </div>
         <div class="bio-section terminal-frame glitch-target">
             <h3 class="scramble-target">PERSONNEL BIO</h3>
@@ -25,22 +25,20 @@ const pages = {
                 <div class="tree-header">C:\\PORTFOLIO\\></div>
                 <div class="tree-line"><span class="tree-dir">\u251c\u2500\u2500 INDIVIDUAL_WORKS\\</span></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-dfs1')">DFS1_OpenXR.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-netchess')">NetChess3D.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-doomskater')">DoomSkater.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-mathvisual')">MathVisualTests.exe</button></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500 LEVEL_DESIGN\\</span></div>
                 <div class="tree-line">\u2502   \u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-forestvalley')">ForestValley.map</button></div>
                 <div class="tree-line">\u2502   \u2502   <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-deeprock')">dm_deeprock.map</button></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u2514\u2500\u2500 VFX\\</span></div>
-                <div class="tree-line">\u2502       <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-swordattack')">SwordAttack.fx</button></div>
-                <div class="tree-line">\u2502       <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-bloodfx')">BloodFX.fx</button></div>
-                <div class="tree-line">\u2502       <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-buildingexplode')">BuildingExplode.fx</button></div>
-                <div class="tree-line">\u2502       <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-warpfx')">WarpFX.fx</button></div>
-                <div class="tree-line">\u2502       <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-gideonfx')">GideonFX.fx</button></div>
-                <div class="tree-line">\u2502       <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-energybeam')">EnergyBeam.fx</button></div>
+                <div class="tree-line">\u2502       <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-vfx')">VFX_Reel.fx</button></div>
                 <div class="tree-line"><span class="tree-dir">\u251c\u2500\u2500 COLLABORATIONS\\</span></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-splittercell')">SplitterCell.exe</button></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-hamsterballin')">HamsterBallin.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-splittercell')">SplitterCell.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <span class="tree-coming-soon">[IN_DEV] BOX-SHOT.exe</span></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-dragonninja')">DragonNinjaClan.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-knightsofiron')">KnightsOfIron.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u2514\u2500\u2500</span> <span class="tree-coming-soon">[IN_DEV] BOX-SHOT.exe</span></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-knightsofiron')">KnightsOfIron.exe</button></div>
                 <div class="tree-line"><span class="tree-dir">\u2514\u2500\u2500 DEVELOPER_INFO\\</span></div>
                 <div class="tree-line">    <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('personal')">Resume_V2.md</button></div>
             </div>
@@ -53,19 +51,64 @@ const pages = {
     work: `<section class="page-section page-work">
         <div class="status-container"><div class="status-msg">ACCESSING_SOLO_ASSIGNMENTS... [DECRYPTING]</div></div>
         <h2 style="color:var(--blue-accent);" class="scramble-target">INDIVIDUAL WORKS</h2>
-        <div class="work-grid">
-            <div class="work-card terminal-frame glitch-target glitch-active" id="section-dfs1">
-                <div class="project-layout-grid">
-                    <div class="project-media-column">
-                        <div class="media-container">
-                            <img src="images/content/dfs1_openxr.png" class="current-media">
-                        </div>
+        <p style="font-family:monospace; font-size:0.75rem; color:#888; margin-bottom:15px;">All technical projects developed in a custom C++ DirectX 11 engine built during studies at SMU Guildhall.</p>
+
+        <div class="work-card terminal-frame glitch-target glitch-active" id="section-dfs1">
+            <div class="project-layout-grid">
+                <div class="project-media-column">
+                    <div class="media-container">
+                        <img src="images/content/dfs1_openxr.png" class="current-media">
                     </div>
-                    <div class="project-info-column">
-                        <h3 class="scramble-target">PROJECT: DFS1 - OpenXR Integration</h3>
-                        <p style="color:var(--blue-accent); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: VR SYSTEMS PROGRAMMER</p>
-                        <p class="scramble-target">Integrated the OpenXR VR API into a custom C++ DirectX 11 engine. Developed functions to display data and states of active VR devices, enabling ray casting from VR controllers and 3D object manipulation in physical space. Built real-time stereo viewport rendering pipelines and native OpenXR projection matrix transformations.</p>
+                </div>
+                <div class="project-info-column">
+                    <h3 class="scramble-target">PROJECT: OpenXR Testing Environment</h3>
+                    <p style="color:var(--blue-accent); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: VR SYSTEMS PROGRAMMER</p>
+                    <p class="scramble-target">Integrated the OpenXR VR API into a personal rendering pipeline to test interactions and gameplay concepts. Developed functions to display data and states of active VR devices, enabling ray casting from VR controllers and 3D object manipulation in physical space.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-card terminal-frame glitch-target" id="section-netchess">
+            <div class="project-layout-grid">
+                <div class="project-media-column">
+                    <div class="media-container">
+                        <img src="images/content/placeholders/netchess3d.png" class="current-media">
                     </div>
+                </div>
+                <div class="project-info-column">
+                    <h3 class="scramble-target">PROJECT: NetChess 3D</h3>
+                    <p style="color:var(--blue-accent); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: NETWORK & GRAPHICS PROGRAMMER</p>
+                    <p class="scramble-target">Developed a 3D chess environment enabling players to perform moves through in-game interactions over a simple network multiplayer system. Engineered a vector-based grid system to manage square and piece data. Implemented static mesh loading, run-time customization of chess sets, VR support, and simulated lighting systems with shader-based visual cues to highlight valid moves.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-card terminal-frame glitch-target" id="section-doomskater">
+            <div class="project-layout-grid">
+                <div class="project-media-column">
+                    <div class="media-container">
+                        <img src="images/content/placeholders/doomskater.png" class="current-media">
+                    </div>
+                </div>
+                <div class="project-info-column">
+                    <h3 class="scramble-target">PROJECT: Doomenstien: Doom Skater</h3>
+                    <p style="color:var(--blue-accent); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: GAMEPLAY PROGRAMMER</p>
+                    <p class="scramble-target">Created a Doom/Wolfenstein 3D-inspired shooter featuring a 3rd-person skateboard mode. Programmed movement mechanics including ollies, Goomba-stomping, and an additive force control scheme simulating pushing a skateboard. Implemented custom sprites and physics-based weapon knockback to add velocity while skating.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-card terminal-frame glitch-target" id="section-mathvisual">
+            <div class="project-layout-grid">
+                <div class="project-media-column">
+                    <div class="media-container">
+                        <img src="images/content/placeholders/mathvisual.png" class="current-media">
+                    </div>
+                </div>
+                <div class="project-info-column">
+                    <h3 class="scramble-target">PROJECT: Math Visual Tests 2D & 3D</h3>
+                    <p style="color:var(--blue-accent); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: ENGINE & PHYSICS PROGRAMMER</p>
+                    <p class="scramble-target">Created visual representations to validate custom-defined math systems within the engine. Built interactive, randomized displays for geometric queries including nearest point on object, overlap detection, and ray casting. Developed complex simulations including a Pachinko-like collision system for testing 2D physics and time-step systems.</p>
                 </div>
             </div>
         </div>
@@ -114,32 +157,37 @@ const pages = {
         </div>
 
         <hr class="section-divider">
-        <h2 style="color:var(--blue-accent); margin-top:10px;" class="scramble-target">VISUAL_EFFECTS</h2>
+        <h2 style="color:var(--blue-accent); margin-top:10px;" class="scramble-target" id="section-vfx">VISUAL_EFFECTS</h2>
 
-        <div class="vfx-grid">
-            <div class="vfx-card" id="section-swordattack">
-                <h4>Sword Attack</h4>
+        <div class="vfx-carousel" id="vfx-carousel">
+            <div class="vfx-slide active" data-vfx="0">
+                <h4>Sword Attack FX</h4>
                 <video controls muted loop playsinline preload="metadata"><source src="images/content/VFX/Sword attack/Desktop 2023.05.15 - 16.07.50.05.DVR_Trim.mp4" type="video/mp4"></video>
             </div>
-            <div class="vfx-card" id="section-bloodfx">
+            <div class="vfx-slide" data-vfx="1">
                 <h4>Blood FX</h4>
                 <video controls muted loop playsinline preload="metadata"><source src="images/content/VFX/Vfx2 1 blood/Desktop 2023.05.31 - 14.30.28.05.DVR_Trim.mp4" type="video/mp4"></video>
             </div>
-            <div class="vfx-card" id="section-buildingexplode">
-                <h4>Building Explode</h4>
+            <div class="vfx-slide" data-vfx="2">
+                <h4>Building Explode FX</h4>
                 <video controls muted loop playsinline preload="metadata"><source src="images/content/VFX/Vfx2 project 2 building explode/Desktop 2023.05.15 - 16.49.12.07.DVR_Trim.mp4" type="video/mp4"></video>
             </div>
-            <div class="vfx-card" id="section-warpfx">
+            <div class="vfx-slide" data-vfx="3">
                 <h4>Warp FX</h4>
                 <video controls muted loop playsinline preload="metadata"><source src="images/content/VFX/VFX2 Final Warp fx/Desktop 2023.06.05 - 13.46.31.02.DVR_Trim.mp4" type="video/mp4"></video>
             </div>
-            <div class="vfx-card" id="section-gideonfx">
+            <div class="vfx-slide" data-vfx="4">
                 <h4>Gideon Character FX</h4>
                 <video controls muted loop playsinline preload="metadata"><source src="images/content/VFX/VFX2 Project 3 Gideon/Desktop 2023.06.05 - 13.47.00.03.DVR_Trim.mp4" type="video/mp4"></video>
             </div>
-            <div class="vfx-card" id="section-energybeam">
-                <h4>Energy Beam</h4>
+            <div class="vfx-slide" data-vfx="5">
+                <h4>Energy Beam FX</h4>
                 <video controls muted loop playsinline preload="metadata"><source src="images/content/VFX/ffx1 final/Desktop 2023.04.25 - 14.12.42.04.DVR_Trim.mp4" type="video/mp4"></video>
+            </div>
+            <div class="vfx-controls">
+                <button class="diegetic-button-static mini no-scramble" id="prev-vfx">PREV_FX</button>
+                <span id="counter-vfx" style="font-family:monospace; color:var(--blue-accent); font-size:0.8rem;">1 / 6</span>
+                <button class="diegetic-button-static mini no-scramble" id="next-vfx">NEXT_FX</button>
             </div>
         </div>
     </section>`,
@@ -149,41 +197,59 @@ const pages = {
         <h2 style="color:var(--terminal-green);" class="scramble-target">COLLABORATIONS</h2>
         <div class="team-sections">
 
-            <div class="team-project terminal-frame glitch-target" id="section-splittercell">
-                <div class="project-layout-grid">
-                    <div class="project-media-column">
-                        <div class="media-container" id="splitter-media">
-                            <img src="images/content/Splitter_Cell/Game Poster.png" class="current-media">
-                            <div class="media-controls">
-                                <button class="diegetic-button-static mini no-scramble" id="prev-splitter">PREV_FEED</button>
-                                <span id="counter-splitter" style="font-family:monospace; color:var(--terminal-green); font-size:0.8rem;">1 / 3</span>
-                                <button class="diegetic-button-static mini no-scramble" id="next-splitter">NEXT_FEED</button>
-                            </div>
-                        </div>
-                        <div class="trailer-embed">
-                            <iframe src="https://www.youtube.com/embed/vAadoEkUOxA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="team-project terminal-frame glitch-target poster-featured" id="section-hamsterballin">
+                <div class="poster-bg" style="background-image:url('images/content/Hamster_Ballin&#39;/WebPoster_280x360.png');"></div>
+                <h3 class="scramble-target" style="color:#fff; margin-bottom:5px;">PROJECT: Hamster Ballin'</h3>
+                <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: HEAD COMMON UI PROGRAMMER | 2026</p>
+                <p class="scramble-target" style="margin-bottom:12px;">Led Common UI programming for Unreal Engine 5. Engineered multi-controller input for Common UI (circumventing standard limitations), programmed drop-in-drop-out multiplayer controller assignment, created diegetic menu systems mapping camera movements and character animations to UI interactions, and integrated Steamworks with a custom C++ abstraction layer for Blueprint access. A competitive arcade racer for up to 4 local players.</p>
+                <div class="media-trailer-row">
+                    <div class="media-container" id="hamsterBallin-media">
+                        <img src="images/content/Hamster_Ballin'/WebPoster_280x360.png" class="current-media" style="height:220px;">
+                        <div class="media-controls">
+                            <button class="diegetic-button-static mini no-scramble" id="prev-hamsterBallin">PREV</button>
+                            <span id="counter-hamsterBallin" style="font-family:monospace; color:var(--terminal-green); font-size:0.8rem;">1 / 6</span>
+                            <button class="diegetic-button-static mini no-scramble" id="next-hamsterBallin">NEXT</button>
                         </div>
                     </div>
-                    <div class="project-info-column">
-                        <h3 class="scramble-target">PROJECT: Splitter Cell</h3>
-                        <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: MULTI-FACETED DEVELOPER</p>
-                        <p class="scramble-target">Collaborative stealth-action mechanics development, featuring advanced tactical pathfinding and lighting-based detection systems. Utilized custom shader variables to calculate player exposure indices relative to ambient shadow boundaries.</p>
+                    <div class="trailer-embed">
+                        <iframe src="https://www.youtube.com/embed/ogLB5EIMdcw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <a href="https://store.steampowered.com/app/4319370/Hamsterballin/" target="_blank" class="steam-link no-scramble" style="margin-top:12px;">VIEW ON STEAM \u25B8</a>
+            </div>
+
+            <div class="team-project terminal-frame glitch-target poster-featured" id="section-splittercell">
+                <div class="poster-bg" style="background-image:url('images/content/Splitter_Cell/Game Poster.png');"></div>
+                <h3 class="scramble-target" style="color:#fff; margin-bottom:5px;">PROJECT: Splitter Cell</h3>
+                <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: MULTI-FACETED DEVELOPER</p>
+                <p class="scramble-target" style="margin-bottom:12px;">Splitter Cell is a 2D shooter-platformer that takes place inside a human body where the player takes control of a blue amoeba-like creature named 'Marcell'. The player traverses across the body, using their movement and special 'splitting' ability to shoot projectiles at valid surfaces to create platforms to aid their traversal across the level's obstacles and hazards.</p>
+                <div class="media-trailer-row">
+                    <div class="media-container" id="splitter-media">
+                        <img src="images/content/Splitter_Cell/Game Poster.png" class="current-media" style="height:220px;">
+                        <div class="media-controls">
+                            <button class="diegetic-button-static mini no-scramble" id="prev-splitter">PREV</button>
+                            <span id="counter-splitter" style="font-family:monospace; color:var(--terminal-green); font-size:0.8rem;">1 / 3</span>
+                            <button class="diegetic-button-static mini no-scramble" id="next-splitter">NEXT</button>
+                        </div>
+                    </div>
+                    <div class="trailer-embed">
+                        <iframe src="https://www.youtube.com/embed/vAadoEkUOxA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
 
-            <div class="team-project terminal-frame glitch-target" id="section-hamsterballin">
+            <div class="team-project terminal-frame glitch-target coming-soon-project" id="section-boxshot">
+                <div class="coming-soon-badge">IN DEVELOPMENT</div>
                 <div class="project-layout-grid">
                     <div class="project-media-column">
                         <div class="media-container single-image">
-                            <img src="images/content/Hamster_Ballin'/WebPoster_280x360.png" class="current-media" style="max-height:300px;">
+                            <img src="images/content/BoxShot/concept_art.jpg" class="current-media" style="max-height:300px;">
                         </div>
                     </div>
                     <div class="project-info-column">
-                        <h3 class="scramble-target">PROJECT: Hamster Ballin'</h3>
-                        <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: HEAD COMMON UI PROGRAMMER | 2026</p>
-                        <p class="scramble-target">Led Common UI programming for Unreal Engine 5. Engineered multi-controller input for Common UI (circumventing standard limitations), programmed drop-in-drop-out multiplayer controller assignment, created diegetic menu systems mapping camera movements and character animations to UI interactions, and integrated Steamworks with a custom C++ abstraction layer for Blueprint access. A competitive arcade racer for up to 4 local players.</p>
-                        <a href="https://store.steampowered.com/app/4319370/Hamsterballin/" target="_blank" class="steam-link no-scramble">VIEW ON STEAM \u25B8</a>
+                        <h3 class="scramble-target">PROJECT: BOX-SHOT</h3>
+                        <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: GAME PROGRAMMER & UI CONSULTANT | 2026-2027</p>
+                        <p class="scramble-target">Currently in development. Developing weapons systems programming in UE5, including complex projectile reactions against diverse surfaces and enemy types. Serving as Common UI consultant and primary developer for the weapon select interface.</p>
                     </div>
                 </div>
             </div>
@@ -229,22 +295,6 @@ const pages = {
                 </div>
             </div>
 
-            <div class="team-project terminal-frame glitch-target coming-soon-project" id="section-boxshot">
-                <div class="coming-soon-badge">IN DEVELOPMENT</div>
-                <div class="project-layout-grid">
-                    <div class="project-media-column">
-                        <div class="media-container single-image">
-                            <img src="images/content/BoxShot/concept_art.jpg" class="current-media" style="max-height:300px;">
-                        </div>
-                    </div>
-                    <div class="project-info-column">
-                        <h3 class="scramble-target">PROJECT: BOX-SHOT</h3>
-                        <p style="color:var(--terminal-green); font-family:monospace; font-size:0.85rem; margin-bottom:10px;">ROLE: GAME PROGRAMMER & UI CONSULTANT | 2026-2027</p>
-                        <p class="scramble-target">Currently in development. Developing weapons systems programming in UE5, including complex projectile reactions against diverse surfaces and enemy types. Serving as Common UI consultant and primary developer for the weapon select interface.</p>
-                    </div>
-                </div>
-            </div>
-
         </div></section>`,
 
     personal: `<section class="page-section page-personal">
@@ -281,12 +331,8 @@ let audioEnabled = true;
 const SoundManager = {
     ctx: null,
     init() {
-        if (!this.ctx) {
-            this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (this.ctx.state === 'suspended') {
-            this.ctx.resume();
-        }
+        if (!this.ctx) { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+        if (this.ctx.state === 'suspended') { this.ctx.resume(); }
     },
     playHover() {
         if (!audioEnabled) return;
@@ -294,66 +340,43 @@ const SoundManager = {
             this.init();
             const osc = this.ctx.createOscillator();
             const gain = this.ctx.createGain();
-            
-            // Half-Life hover/focus pip: deeper pitch
             osc.type = 'sine';
             osc.frequency.setValueAtTime(800, this.ctx.currentTime);
             osc.frequency.exponentialRampToValueAtTime(600, this.ctx.currentTime + 0.035);
-            
             gain.gain.setValueAtTime(0.015, this.ctx.currentTime);
             gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.035);
-            
-            osc.connect(gain);
-            gain.connect(this.ctx.destination);
-            osc.start();
-            osc.stop(this.ctx.currentTime + 0.035);
+            osc.connect(gain); gain.connect(this.ctx.destination);
+            osc.start(); osc.stop(this.ctx.currentTime + 0.035);
         } catch (e) { console.warn(e); }
     },
     playClick() {
         if (!audioEnabled) return;
         try {
             this.init();
-            
             const now = this.ctx.currentTime;
-            
-            // Half-Life click UI Sound: Double mechanical beep/pip
             const osc1 = this.ctx.createOscillator();
             const gain1 = this.ctx.createGain();
-            osc1.type = 'sine';
-            osc1.frequency.setValueAtTime(580, now);
+            osc1.type = 'sine'; osc1.frequency.setValueAtTime(580, now);
             gain1.gain.setValueAtTime(0.035, now);
             gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
-            osc1.connect(gain1);
-            gain1.connect(this.ctx.destination);
-            osc1.start(now);
-            osc1.stop(now + 0.03);
-
-            // Pulse 2 (offset by 25ms, lower frequency)
+            osc1.connect(gain1); gain1.connect(this.ctx.destination);
+            osc1.start(now); osc1.stop(now + 0.03);
             const osc2 = this.ctx.createOscillator();
             const gain2 = this.ctx.createGain();
-            osc2.type = 'sine';
-            osc2.frequency.setValueAtTime(440, now + 0.025);
+            osc2.type = 'sine'; osc2.frequency.setValueAtTime(440, now + 0.025);
             gain2.gain.setValueAtTime(0.03, now + 0.025);
             gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.055);
-            osc2.connect(gain2);
-            gain2.connect(this.ctx.destination);
-            osc2.start(now + 0.025);
-            osc2.stop(now + 0.055);
-            
-            // Quiet mechanical noise click transient
+            osc2.connect(gain2); gain2.connect(this.ctx.destination);
+            osc2.start(now + 0.025); osc2.stop(now + 0.055);
             const bufferSize = this.ctx.sampleRate * 0.012;
             const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
             const data = buffer.getChannelData(0);
-            for (let i = 0; i < bufferSize; i++) {
-                data[i] = Math.random() * 2 - 1;
-            }
-            const noise = this.ctx.createBufferSource();
-            noise.buffer = buffer;
+            for (let i = 0; i < bufferSize; i++) { data[i] = Math.random() * 2 - 1; }
+            const noise = this.ctx.createBufferSource(); noise.buffer = buffer;
             const noiseGain = this.ctx.createGain();
             noiseGain.gain.setValueAtTime(0.012, now);
             noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.012);
-            noise.connect(noiseGain);
-            noiseGain.connect(this.ctx.destination);
+            noise.connect(noiseGain); noiseGain.connect(this.ctx.destination);
             noise.start(now);
         } catch (e) { console.warn(e); }
     },
@@ -363,19 +386,15 @@ const SoundManager = {
             this.init();
             const osc = this.ctx.createOscillator();
             const gain = this.ctx.createGain();
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(60, this.ctx.currentTime);
+            osc.type = 'sawtooth'; osc.frequency.setValueAtTime(60, this.ctx.currentTime);
             gain.gain.setValueAtTime(0.018, this.ctx.currentTime);
             gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.15);
-            osc.connect(gain);
-            gain.connect(this.ctx.destination);
-            osc.start();
-            osc.stop(this.ctx.currentTime + 0.15);
+            osc.connect(gain); gain.connect(this.ctx.destination);
+            osc.start(); osc.stop(this.ctx.currentTime + 0.15);
         } catch (e) { console.warn(e); }
     }
 };
 
-// Bind sound effects to all interactive elements
 function attachSoundEvents(parent = document) {
     parent.querySelectorAll("button, a, .nav-btn, .diegetic-button-static, .tree-link, .steam-link").forEach(el => {
         if (!el.dataset.soundBound) {
@@ -392,6 +411,14 @@ const mediaAssets = {
         "images/content/Splitter_Cell/Game Poster.png",
         "images/content/Splitter_Cell/Screenshot 2025-12-01 114430.png",
         "images/content/Splitter_Cell/Screenshot 2025-12-01 115115.png"
+    ],
+    hamsterBallin: [
+        "images/content/Hamster_Ballin'/WebPoster_280x360.png",
+        "images/content/Hamster_Ballin'/hb_menu.avif",
+        "images/content/Hamster_Ballin'/hb_charselect.avif",
+        "images/content/Hamster_Ballin'/hb_gacha.avif",
+        "images/content/Hamster_Ballin'/hb_cogwork.avif",
+        "images/content/Hamster_Ballin'/hb_roulette.avif"
     ],
     dragonNinja: [
         "images/content/DragonNinjaClan/0YavDF43vambDoRHzZWGlm.png",
@@ -430,67 +457,46 @@ const mediaAssets = {
         "images/content/LD/dm_deeprock/6lL86jPM5m9fa1GOoVkeGo.png"
     ]
 };
-let mediaIndex = { splitter: 0, dragonNinja: 0, knightsOfIron: 0, forestValley: 0, deeprock: 0 };
+let mediaIndex = { splitter: 0, hamsterBallin: 0, dragonNinja: 0, knightsOfIron: 0, forestValley: 0, deeprock: 0 };
 
 function cycleMedia(id, direction = 1) {
     const container = document.getElementById(id + "-media");
     if (!container) return;
     const img = container.querySelector("img");
     if (!img) return;
-    
     mediaIndex[id] = (mediaIndex[id] + direction + mediaAssets[id].length) % mediaAssets[id].length;
     img.src = mediaAssets[id][mediaIndex[id]];
-    
     const counter = document.getElementById("counter-" + id);
-    if (counter) {
-        counter.innerText = `${mediaIndex[id] + 1} / ${mediaAssets[id].length}`;
-    }
+    if (counter) { counter.innerText = `${mediaIndex[id] + 1} / ${mediaAssets[id].length}`; }
 }
 
-// Markdown Parser logic
+// VFX Carousel
+let vfxIndex = 0;
+const vfxTotal = 6;
+function cycleVfx(direction) {
+    const slides = document.querySelectorAll('.vfx-slide');
+    if (!slides.length) return;
+    slides[vfxIndex].classList.remove('active');
+    vfxIndex = (vfxIndex + direction + vfxTotal) % vfxTotal;
+    slides[vfxIndex].classList.add('active');
+    const counter = document.getElementById('counter-vfx');
+    if (counter) counter.innerText = `${vfxIndex + 1} / ${vfxTotal}`;
+}
+
+// Markdown Parser
 function parseMarkdown(md) {
-    // Strip YAML frontmatter
     let html = md.replace(/^---[\s\S]*?---/, '');
-    
     const lines = html.split('\n');
     let parsed = '';
     let inList = false;
-    
     for (let line of lines) {
         line = line.trim();
-        if (!line) {
-            if (inList) { parsed += '</ul>'; inList = false; }
-            continue;
-        }
-        
-        if (line === '---') {
-            if (inList) { parsed += '</ul>'; inList = false; }
-            parsed += '<hr class="dossier-hr">';
-            continue;
-        }
-        
-        if (line.startsWith('# ')) {
-            if (inList) { parsed += '</ul>'; inList = false; }
-            parsed += `<h1 class="dossier-h1">${line.substring(2)}</h1>`;
-            continue;
-        }
-        if (line.startsWith('## ')) {
-            if (inList) { parsed += '</ul>'; inList = false; }
-            parsed += `<h2 class="dossier-h2">${line.substring(3)}</h2>`;
-            continue;
-        }
-        if (line.startsWith('### ')) {
-            if (inList) { parsed += '</ul>'; inList = false; }
-            parsed += `<h3 class="dossier-h3">${line.substring(4)}</h3>`;
-            continue;
-        }
-        
-        if (line.startsWith('- ') || line.startsWith('* ')) {
-            if (!inList) { parsed += '<ul class="dossier-list">'; inList = true; }
-            parsed += `<li>${parseInlineMarkdown(line.substring(2))}</li>`;
-            continue;
-        }
-        
+        if (!line) { if (inList) { parsed += '</ul>'; inList = false; } continue; }
+        if (line === '---') { if (inList) { parsed += '</ul>'; inList = false; } parsed += '<hr class="dossier-hr">'; continue; }
+        if (line.startsWith('# ')) { if (inList) { parsed += '</ul>'; inList = false; } parsed += `<h1 class="dossier-h1">${line.substring(2)}</h1>`; continue; }
+        if (line.startsWith('## ')) { if (inList) { parsed += '</ul>'; inList = false; } parsed += `<h2 class="dossier-h2">${line.substring(3)}</h2>`; continue; }
+        if (line.startsWith('### ')) { if (inList) { parsed += '</ul>'; inList = false; } parsed += `<h3 class="dossier-h3">${line.substring(4)}</h3>`; continue; }
+        if (line.startsWith('- ') || line.startsWith('* ')) { if (!inList) { parsed += '<ul class="dossier-list">'; inList = true; } parsed += `<li>${parseInlineMarkdown(line.substring(2))}</li>`; continue; }
         if (inList) { parsed += '</ul>'; inList = false; }
         parsed += `<p class="dossier-p">${parseInlineMarkdown(line)}</p>`;
     }
@@ -505,52 +511,41 @@ function parseInlineMarkdown(text) {
 }
 
 function loadPage(p, sectionId) {
-    const a = document.getElementById("content-area"); 
-    if (!a) return; 
-    a.innerHTML = pages[p] || "<h1>404</h1>"; 
+    const a = document.getElementById("content-area");
+    if (!a) return;
+    a.innerHTML = pages[p] || "<h1>404</h1>";
     
     document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
-    const act = document.getElementById("nav-" + p); 
+    const act = document.getElementById("nav-" + p);
     if (act) act.classList.add("active");
     
     // Wire up all carousels
-    ['splitter', 'dragonNinja', 'knightsOfIron', 'forestValley', 'deeprock'].forEach(id => {
+    ['splitter', 'hamsterBallin', 'dragonNinja', 'knightsOfIron', 'forestValley', 'deeprock'].forEach(id => {
         const prev = document.getElementById('prev-' + id);
         const next = document.getElementById('next-' + id);
         if (prev) prev.onclick = () => cycleMedia(id, -1);
         if (next) next.onclick = () => cycleMedia(id, 1);
     });
 
-    // Reset media indices when loading a page
+    // Wire up VFX carousel
+    const prevVfx = document.getElementById('prev-vfx');
+    const nextVfx = document.getElementById('next-vfx');
+    if (prevVfx) prevVfx.onclick = () => cycleVfx(-1);
+    if (nextVfx) nextVfx.onclick = () => cycleVfx(1);
+    vfxIndex = 0;
+
     Object.keys(mediaIndex).forEach(k => mediaIndex[k] = 0);
     
-    // Resume fetch for personal page
     if (p === "personal") {
         fetch("./images/content/Documents/Jack_Collins_Resume_V2.md")
-            .then(res => {
-                if (!res.ok) throw new Error("Resume not found");
-                return res.text();
-            })
-            .then(text => {
-                const container = document.getElementById("resume-container");
-                if (container) container.innerHTML = parseMarkdown(text);
-                attachSoundEvents(container);
-            })
-            .catch(err => {
-                const container = document.getElementById("resume-container");
-                if (container) container.innerHTML = `<h3 style="color:var(--alert-red);">DOSSIER_ACCESS_DENIED</h3><p style="color:var(--alert-red); font-family:monospace; margin-top:10px;">ERROR: FAILED_TO_DECRYPT_DOSSIER_FILE (${err.message})</p>`;
-            });
+            .then(res => { if (!res.ok) throw new Error("Resume not found"); return res.text(); })
+            .then(text => { const c = document.getElementById("resume-container"); if (c) c.innerHTML = parseMarkdown(text); attachSoundEvents(c); })
+            .catch(err => { const c = document.getElementById("resume-container"); if (c) c.innerHTML = `<h3 style="color:var(--alert-red);">DOSSIER_ACCESS_DENIED</h3><p style="color:var(--alert-red); font-family:monospace; margin-top:10px;">ERROR: ${err.message}</p>`; });
     }
     
-    // Scroll to section if specified
     if (sectionId) {
-        setTimeout(() => {
-            const el = document.getElementById(sectionId);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-    } else {
-        a.scrollTop = 0;
-    }
+        setTimeout(() => { const el = document.getElementById(sectionId); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    } else { a.scrollTop = 0; }
     
     attachSoundEvents(a);
 }
@@ -564,38 +559,22 @@ function scrambleText() {
             const scrambled = original.split("").map(char => (scrambles[char] && Math.random() > 0.65) ? scrambles[char] : char).join("");
             el.innerText = scrambled;
             setTimeout(() => { el.innerText = original; }, 180);
-            
-            // Occasional glitch hum sound when text scrambles
-            if (Math.random() > 0.96) {
-                SoundManager.playGlitch();
-            }
+            if (Math.random() > 0.96) { SoundManager.playGlitch(); }
         }
     });
 }
 setInterval(scrambleText, 3000);
 
-document.addEventListener("DOMContentLoaded", () => { 
-    // Navigation hooks
-    document.querySelectorAll(".nav-btn").forEach(b => { 
-        b.addEventListener("click", () => loadPage(b.getAttribute("data-page"))); 
-    }); 
-    
-    // Audio Toggle hook
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".nav-btn").forEach(b => { b.addEventListener("click", () => loadPage(b.getAttribute("data-page"))); });
     const audioBtn = document.getElementById("audio-toggle");
     if (audioBtn) {
         audioBtn.addEventListener("click", () => {
             audioEnabled = !audioEnabled;
-            if (audioEnabled) {
-                audioBtn.innerText = "SPKR: ON";
-                audioBtn.classList.remove("muted");
-                SoundManager.playClick();
-            } else {
-                audioBtn.innerText = "SPKR: OFF";
-                audioBtn.classList.add("muted");
-            }
+            if (audioEnabled) { audioBtn.innerText = "SPKR: ON"; audioBtn.classList.remove("muted"); SoundManager.playClick(); }
+            else { audioBtn.innerText = "SPKR: OFF"; audioBtn.classList.add("muted"); }
         });
     }
-    
     attachSoundEvents(document);
-    loadPage("home"); 
+    loadPage("home");
 });
