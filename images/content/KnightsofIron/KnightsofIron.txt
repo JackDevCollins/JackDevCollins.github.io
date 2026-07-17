@@ -1,0 +1,17 @@
+— PROJECT NAME 
+
+Knights of Iron
+
+
+
+— ROLE
+
+Level Design & Environmental Art
+
+
+
+— DATE
+
+2018
+
+Knights of Iron was the product of a one semester project development class at Richland College. The team of about 20 students came together to develop a mech strategy-lite shooter complete with a story, soundtrack, multiple levels and enemy types. This was my first project development class as well as my first large scale project using Unity. The experience I gained of the workflow and cooperation needed for projects like this was very valuable. On the level design aspect, the project was pretty limiting in our options due to the limited mobility of the mech and the distinct shader we used. However learning to work with limitations is an important lesson I can take from my  time on the project.

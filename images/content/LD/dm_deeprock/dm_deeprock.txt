@@ -1,0 +1,18 @@
+— PROJECT NAME 
+
+Dm_Deeprock
+
+
+
+— ROLE
+
+Level Design & Environmental Art
+
+
+
+— DATE
+
+2019
+
+
+DM_Deeprock is a deathmatch area for Unreal Tournament I made over the coarse of 5 months using the Unreal Engine. The map is a completely enclosed abandoned mining operation of luminous blue ore that help illuminate the map. This project was my biggest solo venture at that point and I learned a lot from the mistakes I made along the way. All assets came from Unreal Tournament’s default library. 
