@@ -10,6 +10,7 @@ const pages = {
             <video autoplay muted loop playsinline><source src="images/content/VFX/ffx1 final/Desktop 2023.04.25 - 14.12.42.04.DVR_Trim.mp4" type="video/mp4"></video>
         </div>
         <div class="status-container"><div class="status-msg">ACCESSING_SECURE_PORTAL... [SUCCESS]</div></div>
+        <div class="terminal-ticker" id="ticker"></div>
         <div class="hero terminal-frame glitch-target glitch-active">
             <h1 class="scramble-target">SUBJECT: JACK COLLINS</h1>
             <p class="subtitle scramble-target">STATUS: GAME PROGRAMMER</p>
@@ -24,21 +25,21 @@ const pages = {
             <div class="file-tree">
                 <div class="tree-header">C:\\PORTFOLIO\\></div>
                 <div class="tree-line"><span class="tree-dir">\u251c\u2500\u2500 INDIVIDUAL_WORKS\\</span></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-dfs1')">DFS1_OpenXR.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-netchess')">NetChess3D.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-doomskater')">DoomSkater.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-mathvisual')">MathVisualTests.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-dfs1')">DFS1_OpenXR</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-netchess')">NetChess3D</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-doomskater')">DoomSkater</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-mathvisual')">MathVisualTests</button></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500 LEVEL_DESIGN\\</span></div>
                 <div class="tree-line">\u2502   \u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-forestvalley')">ForestValley.map</button></div>
                 <div class="tree-line">\u2502   \u2502   <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-deeprock')">dm_deeprock.map</button></div>
                 <div class="tree-line">\u2502   <span class="tree-dir">\u2514\u2500\u2500 VFX\\</span></div>
                 <div class="tree-line">\u2502       <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('work','section-vfx')">VFX_Reel.fx</button></div>
                 <div class="tree-line"><span class="tree-dir">\u251c\u2500\u2500 COLLABORATIONS\\</span></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-hamsterballin')">HamsterBallin.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-splittercell')">SplitterCell.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <span class="tree-coming-soon">[IN_DEV] BOX-SHOT.exe</span></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-dragonninja')">DragonNinjaClan.exe</button></div>
-                <div class="tree-line">\u2502   <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-knightsofiron')">KnightsOfIron.exe</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-hamsterballin')">HamsterBallin</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-splittercell')">SplitterCell</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <span class="tree-coming-soon">[IN_DEV] BOX-SHOT</span></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u251c\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-dragonninja')">DragonNinjaClan</button></div>
+                <div class="tree-line">\u2502   <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('team','section-knightsofiron')">KnightsOfIron</button></div>
                 <div class="tree-line"><span class="tree-dir">\u2514\u2500\u2500 DEVELOPER_INFO\\</span></div>
                 <div class="tree-line">    <span class="tree-dir">\u2514\u2500\u2500</span> <button class="tree-link" onclick="loadPage('personal')">Resume_V2.md</button></div>
             </div>
@@ -50,6 +51,7 @@ const pages = {
 
     work: `<section class="page-section page-work">
         <div class="status-container"><div class="status-msg">ACCESSING_SOLO_ASSIGNMENTS... [DECRYPTING]</div></div>
+        <div class="terminal-ticker" id="ticker"></div>
         <h2 style="color:var(--blue-accent);" class="scramble-target">INDIVIDUAL WORKS</h2>
         <p style="font-family:monospace; font-size:0.75rem; color:#888; margin-bottom:15px;">All technical projects developed in a custom C++ DirectX 11 engine built during studies at SMU Guildhall.</p>
 
@@ -194,6 +196,7 @@ const pages = {
 
     team: `<section class="page-section page-team">
         <div class="status-container"><div class="status-msg">ACCESSING_JOINT_INITIATIVES... [AUTHORIZED]</div></div>
+        <div class="terminal-ticker" id="ticker"></div>
         <h2 style="color:var(--terminal-green);" class="scramble-target">COLLABORATIONS</h2>
         <div class="team-sections">
 
@@ -299,6 +302,7 @@ const pages = {
 
     personal: `<section class="page-section page-personal">
         <div class="status-container"><div class="status-msg">ACCESSING_PERSONNEL_DOSSIER... [AUTHENTICATED]</div></div>
+        <div class="terminal-ticker" id="ticker"></div>
         <h2 style="color:var(--alert-red);" class="scramble-target">DEVELOPER INFO</h2>
         <div class="dossier-grid">
             <div class="dossier-left">
@@ -548,6 +552,8 @@ function loadPage(p, sectionId) {
     } else { a.scrollTop = 0; }
     
     attachSoundEvents(a);
+    stopTicker();
+    startTicker();
 }
 
 // Scramble Animation
@@ -564,6 +570,93 @@ function scrambleText() {
     });
 }
 setInterval(scrambleText, 3000);
+
+// Terminal Ticker — types out messages then backspaces them
+const tickerMessages = [
+    // Facility / Black Mesa themed (no direct Half-Life or Valve mentions)
+    "Anomalous materials detected in testing chamber...",
+    "Specimen GX-7 transport complete. Awaiting further analysis...",
+    "Resonance cascade probability: 0.0000001%... acceptable.",
+    "Anti-mass spectrometer calibration holding at 105%...",
+    "Security breach in Sector C. Initiating lockdown protocol...",
+    "Warning: hazardous environment suit required beyond this point.",
+    "Transit system offline. Please use maintenance corridors.",
+    "Attention all personnel: report to designated safe zones.",
+    "Classified signal intercepted on emergency frequency...",
+    "Tram system rerouted through maintenance tunnels.",
+    "Blast pit containment failure. Sealing lower levels.",
+    "Personnel database sync in progress... 47% complete.",
+    "Lambda core reactor output nominal. Monitoring...",
+    "Unforeseen consequences detected in latest test results.",
+    "Surface access restricted. Military cordon in effect.",
+    "Dimensional breach probability increasing. Stand by.",
+    "The right man in the wrong place... stand by.",
+    "Sample delivery to test chamber 03 is running late.",
+    // JAX FAX
+    "[JAX_FAX] Jack loves pro wrestling enough to have strong opinions on how much he hates pro wrestling!",
+    "[JAX_FAX] Jack constantly played sports growing up including: soccer, football, basketball, wrestling, dance, golf, lacrosse, and baseball",
+    "[JAX_FAX] Jack never tried to learn how to code until 2024, he always thought he wasn't smart enough for it, now he knows that programmers are stupid too.",
+    "[JAX_FAX] Jack was named by his older sister who had recently watched the hit new movie Titanic",
+    "[JAX_FAX] Jack's mother is an artist and father is a programmer, neither skill was inherited"
+];
+
+let tickerCancelled = false;
+function stopTicker() { tickerCancelled = true; }
+
+function startTicker() {
+    tickerCancelled = false;
+    const el = document.getElementById('ticker');
+    if (!el) return;
+
+    const msgs = [...tickerMessages];
+    // Shuffle
+    for (let i = msgs.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [msgs[i], msgs[j]] = [msgs[j], msgs[i]];
+    }
+    let idx = 0;
+
+    function wait(ms) {
+        return new Promise(resolve => {
+            const id = setTimeout(resolve, ms);
+            // Check cancellation every frame
+            (function check() {
+                if (tickerCancelled) { clearTimeout(id); resolve(); }
+                else requestAnimationFrame(check);
+            })();
+        });
+    }
+
+    async function run() {
+        while (!tickerCancelled) {
+            const msg = msgs[idx];
+            idx = (idx + 1) % msgs.length;
+
+            // Type out
+            for (let i = 0; i <= msg.length && !tickerCancelled; i++) {
+                el.textContent = '> ' + msg.substring(0, i) + '\u2588';
+                await wait(30 + Math.random() * 25);
+            }
+            if (tickerCancelled) break;
+
+            // Hold
+            await wait(2800 + Math.random() * 1500);
+            if (tickerCancelled) break;
+
+            // Backspace
+            for (let i = msg.length; i >= 0 && !tickerCancelled; i--) {
+                el.textContent = '> ' + msg.substring(0, i) + '\u2588';
+                await wait(12 + Math.random() * 10);
+            }
+            if (tickerCancelled) break;
+
+            // Pause before next
+            el.textContent = '> \u2588';
+            await wait(900 + Math.random() * 600);
+        }
+    }
+    run();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".nav-btn").forEach(b => { b.addEventListener("click", () => loadPage(b.getAttribute("data-page"))); });
