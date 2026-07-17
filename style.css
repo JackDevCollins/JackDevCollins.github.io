@@ -489,3 +489,178 @@ body {
     border-top: 1px solid rgba(255, 159, 0, 0.15);
     margin: 30px 0;
 }
+
+/* WIP Badge on Nav Button */
+.wip-nav-container {
+    position: relative;
+}
+.wip-badge-nav {
+    position: absolute;
+    top: -6px; right: -4px;
+    background: var(--alert-red);
+    color: #000;
+    font-family: monospace;
+    font-size: 0.6rem;
+    font-weight: bold;
+    padding: 1px 5px;
+    letter-spacing: 1px;
+    animation: wipPulse 2s ease-in-out infinite;
+    z-index: 10;
+    pointer-events: none;
+}
+@keyframes wipPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* WIP Page Overlay */
+.wip-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wip-overlay .wip-banner {
+    font-family: monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--alert-red);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    opacity: 0.15;
+    transform: rotate(-25deg);
+    text-shadow: 0 0 30px rgba(255, 60, 60, 0.3);
+    animation: wipPulse 3s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+/* Game Matrix Chart */
+.matrix-container {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+.matrix-canvas-wrap {
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--concrete-grey);
+    padding: 10px;
+}
+.matrix-canvas-wrap canvas {
+    width: 100%;
+    display: block;
+    cursor: crosshair;
+}
+.matrix-legend {
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px solid var(--concrete-grey);
+    background: rgba(0,0,0,0.4);
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.matrix-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Game Tooltip */
+.game-tooltip {
+    display: none;
+    position: absolute;
+    background: rgba(10, 10, 10, 0.96);
+    border: 2px solid var(--lambda-orange);
+    padding: 12px;
+    min-width: 260px;
+    max-width: 320px;
+    z-index: 200;
+    font-family: monospace;
+    pointer-events: none;
+}
+.game-tooltip.visible { display: block; }
+.game-tooltip .tt-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.game-tooltip .tt-cover {
+    width: 70px;
+    height: 95px;
+    object-fit: cover;
+    border: 1px solid var(--concrete-grey);
+    flex-shrink: 0;
+}
+.game-tooltip .tt-title {
+    color: var(--lambda-orange);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.game-tooltip .tt-year {
+    color: #888;
+    font-size: 0.75rem;
+}
+.game-tooltip .tt-genre {
+    color: var(--blue-accent);
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+.game-tooltip .tt-scores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px 12px;
+    font-size: 0.7rem;
+    color: #ccc;
+    margin-top: 6px;
+}
+.game-tooltip .tt-scores .score-label { color: #888; }
+.game-tooltip .tt-scores .score-val { text-align: right; }
+.game-tooltip .tt-heart {
+    color: #ff4466;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+.game-tooltip .tt-features {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.game-tooltip .tt-tag {
+    background: rgba(255, 159, 0, 0.15);
+    border: 1px solid rgba(255, 159, 0, 0.3);
+    color: var(--lambda-orange);
+    font-size: 0.6rem;
+    padding: 1px 5px;
+}
+
+/* Matrix Filters Stub */
+.matrix-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    opacity: 0.4;
+}
+.matrix-filters .filter-btn {
+    font-family: monospace;
+    font-size: 0.7rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--concrete-grey);
+    color: #888;
+    padding: 3px 8px;
+    cursor: not-allowed;
+}

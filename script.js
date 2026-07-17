@@ -74,7 +74,7 @@ const pages = {
             <div class="project-layout-grid">
                 <div class="project-media-column">
                     <div class="media-container">
-                        <img src="images/content/placeholders/netchess3d.png" class="current-media">
+                        <img src="images/content/NetChess3D/Screenshot 2026-07-17 111939.png" class="current-media">
                     </div>
                 </div>
                 <div class="project-info-column">
@@ -89,7 +89,7 @@ const pages = {
             <div class="project-layout-grid">
                 <div class="project-media-column">
                     <div class="media-container">
-                        <img src="images/content/placeholders/doomskater.png" class="current-media">
+                        <img src="images/content/DoomSkater/Recording 2026-07-17 111323.gif" class="current-media">
                     </div>
                 </div>
                 <div class="project-info-column">
@@ -104,7 +104,7 @@ const pages = {
             <div class="project-layout-grid">
                 <div class="project-media-column">
                     <div class="media-container">
-                        <img src="images/content/placeholders/mathvisual.png" class="current-media">
+                        <img src="images/content/MathVisualTests/Screenshot 2026-07-17 111544.png" class="current-media">
                     </div>
                 </div>
                 <div class="project-info-column">
@@ -327,8 +327,40 @@ const pages = {
                     <p style="font-family:monospace; font-size:0.8rem;">Connecting to resume database...</p>
                 </div>
             </div>
-        </div></section>`
+        </div></section>`,
+
+    matrix: `<section class="page-section page-matrix">
+        <div class="wip-overlay"><div class="wip-banner">/// SYSTEM UNDER DEVELOPMENT /// SYSTEM UNDER DEVELOPMENT /// SYSTEM UNDER DEVELOPMENT ///</div></div>
+        <div class="status-container"><div class="status-msg">INITIALIZING_GAME_MATRIX... [CALIBRATING]</div></div>
+        <div class="terminal-ticker" id="ticker"></div>
+        <h2 style="color:var(--lambda-orange);" class="scramble-target">GAME MATRIX <span style="color:var(--alert-red); font-size:0.7rem; animation: wipPulse 2s ease-in-out infinite;">[WORK IN PROGRESS]</span></h2>
+        <p style="font-family:monospace; font-size:0.75rem; color:#888; margin-bottom:5px;">An attempt to objectively chart subjective opinions. Games are scored on Execution vs Value, with time-decay inflation based on Timelessness.</p>
+        <div class="terminal-frame glitch-target" style="margin-bottom:15px; padding:10px;">
+            <h4 style="color:var(--terminal-green); font-family:monospace; margin-bottom:6px;">INFLATION_SYSTEM</h4>
+            <p style="font-family:monospace; font-size:0.7rem; color:#aaa;">Games lose score over time at a base rate of <span style="color:var(--lambda-orange);">0.15 pts/year</span>. The <span style="color:var(--blue-accent);">Timelessness</span> metric (1-10) reduces this decay. A game with Timelessness=10 never decays; Timelessness=0 decays at full rate.</p>
+            <p style="font-family:monospace; font-size:0.65rem; color:#666; margin-top:4px;">current_value = original_value - (0.15 × (1 - timelessness/10) × years_since_release) // floor: 1.0</p>
+        </div>
+        <div class="matrix-container">
+            <div class="matrix-canvas-wrap">
+                <canvas id="matrix-canvas" width="800" height="600"></canvas>
+                <div class="game-tooltip" id="game-tooltip"></div>
+            </div>
+            <div class="matrix-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#ff4444;"></span> Horror</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#44aaff;"></span> Immersive Sim</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#44ff88;"></span> Platformer</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ffaa44;"></span> Action</div>
+                <div class="legend-item"><span style="font-size:0.8rem;">❤️</span> Heart Award</div>
+            </div>
+            <div class="matrix-filters">
+                <button class="filter-btn" disabled>FILTER: YEAR ▾</button>
+                <button class="filter-btn" disabled>FILTER: GENRE ▾</button>
+                <button class="filter-btn" disabled>TOP 5 OF YEAR ▾</button>
+            </div>
+        </div>
+    </section>`
 };
+
 
 // Retro Terminal Audio Synthesizer (Half-Life Console UI SFX)
 let audioEnabled = true;
@@ -546,6 +578,10 @@ function loadPage(p, sectionId) {
             .then(text => { const c = document.getElementById("resume-container"); if (c) c.innerHTML = parseMarkdown(text); attachSoundEvents(c); })
             .catch(err => { const c = document.getElementById("resume-container"); if (c) c.innerHTML = `<h3 style="color:var(--alert-red);">DOSSIER_ACCESS_DENIED</h3><p style="color:var(--alert-red); font-family:monospace; margin-top:10px;">ERROR: ${err.message}</p>`; });
     }
+
+    if (p === "matrix") {
+        setTimeout(initGameMatrix, 50);
+    }
     
     if (sectionId) {
         setTimeout(() => { const el = document.getElementById(sectionId); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
@@ -656,6 +692,238 @@ function startTicker() {
         }
     }
     run();
+}
+
+// ====== GAME MATRIX CHART SYSTEM ======
+const CURRENT_YEAR = new Date().getFullYear();
+const BASE_DECAY = 0.15;
+
+const genreColors = {
+    'Survival Horror': '#ff4444',
+    'Action Horror': '#ffaa44',
+    'Immersive Sim': '#44aaff',
+    'Platformer': '#44ff88'
+};
+
+const gameData = [
+    {
+        title: 'Resident Evil 4',
+        subtitle: 'GameCube',
+        year: 2005,
+        genre: 'Survival Horror',
+        execution: 9.5,
+        originalValue: 9.8,
+        timelessness: 8.5,
+        originality: 9.0,
+        art: 8.5,
+        heart: true,
+        genreFit: 'Stands out from',
+        features: ['Game Systems', 'Level Design', 'Pacing', 'Camera Innovation'],
+        cover: 'images/content/GameMatrix/re4.jpg'
+    },
+    {
+        title: 'Dishonored',
+        subtitle: '',
+        year: 2012,
+        genre: 'Immersive Sim',
+        execution: 7.5,
+        originalValue: 7.8,
+        timelessness: 6.5,
+        originality: 8.5,
+        art: 8.0,
+        heart: false,
+        genreFit: 'Exemplifies',
+        features: ['Art Direction', 'Level Design', 'Player Agency', 'World Building'],
+        cover: 'images/content/GameMatrix/dishonored.jpg'
+    },
+    {
+        title: 'Super Mario Bros',
+        subtitle: 'NES',
+        year: 1985,
+        genre: 'Platformer',
+        execution: 9.0,
+        originalValue: 10.0,
+        timelessness: 6.0,
+        originality: 10.0,
+        art: 7.0,
+        heart: true,
+        genreFit: 'Exemplifies',
+        features: ['Game Systems', 'Level Design', 'Soundtrack', 'Industry Impact'],
+        cover: 'images/content/GameMatrix/smb.png'
+    },
+    {
+        title: 'Resident Evil 6',
+        subtitle: '',
+        year: 2012,
+        genre: 'Action Horror',
+        execution: 5.0,
+        originalValue: 4.5,
+        timelessness: 3.0,
+        originality: 2.5,
+        art: 5.5,
+        heart: false,
+        genreFit: 'Stands out from',
+        features: ['Co-op', 'Campaign Length'],
+        cover: 'images/content/GameMatrix/re6.png'
+    }
+];
+
+function computeCurrentValue(game) {
+    const years = CURRENT_YEAR - game.year;
+    const decayRate = BASE_DECAY * (1 - game.timelessness / 10);
+    return Math.max(1.0, game.originalValue - (decayRate * years));
+}
+
+function initGameMatrix() {
+    const canvas = document.getElementById('matrix-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const tooltip = document.getElementById('game-tooltip');
+
+    // High-DPI canvas
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.width * 0.75 * dpr;
+    canvas.style.height = (rect.width * 0.75) + 'px';
+    ctx.scale(dpr, dpr);
+
+    const W = rect.width;
+    const H = rect.width * 0.75;
+    const PAD = { top: 30, right: 30, bottom: 45, left: 50 };
+    const chartW = W - PAD.left - PAD.right;
+    const chartH = H - PAD.top - PAD.bottom;
+
+    function xToCanvas(v) { return PAD.left + ((v - 1) / 9) * chartW; }
+    function yToCanvas(v) { return PAD.top + chartH - ((v - 1) / 9) * chartH; }
+
+    // Prepare data with computed values
+    const plotData = gameData.map(g => ({
+        ...g,
+        currentValue: computeCurrentValue(g),
+        cx: xToCanvas(g.execution),
+        cy: yToCanvas(computeCurrentValue(g))
+    }));
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Grid lines
+        ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+        ctx.lineWidth = 1;
+        for (let i = 1; i <= 10; i++) {
+            const x = xToCanvas(i);
+            const y = yToCanvas(i);
+            ctx.beginPath(); ctx.moveTo(x, PAD.top); ctx.lineTo(x, PAD.top + chartH); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(PAD.left, y); ctx.lineTo(PAD.left + chartW, y); ctx.stroke();
+        }
+
+        // Axes
+        ctx.strokeStyle = 'rgba(255,159,0,0.4)';
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(PAD.left, PAD.top); ctx.lineTo(PAD.left, PAD.top + chartH); ctx.lineTo(PAD.left + chartW, PAD.top + chartH); ctx.stroke();
+
+        // Axis labels
+        ctx.fillStyle = '#888';
+        ctx.font = '11px monospace';
+        ctx.textAlign = 'center';
+        for (let i = 1; i <= 10; i++) {
+            ctx.fillText(i, xToCanvas(i), PAD.top + chartH + 18);
+            ctx.textAlign = 'right';
+            ctx.fillText(i, PAD.left - 8, yToCanvas(i) + 4);
+            ctx.textAlign = 'center';
+        }
+
+        // Axis titles
+        ctx.fillStyle = 'rgba(255,159,0,0.6)';
+        ctx.font = 'bold 12px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('EXECUTION →', PAD.left + chartW / 2, H - 4);
+        ctx.save();
+        ctx.translate(12, PAD.top + chartH / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillText('VALUE ↑', 0, 0);
+        ctx.restore();
+
+        // Plot points
+        plotData.forEach(g => {
+            const color = genreColors[g.genre] || '#ffffff';
+            // Outer glow
+            ctx.beginPath();
+            ctx.arc(g.cx, g.cy, 10, 0, Math.PI * 2);
+            ctx.fillStyle = color.replace(')', ',0.15)').replace('rgb', 'rgba');
+            ctx.fill();
+            // Point
+            ctx.beginPath();
+            ctx.arc(g.cx, g.cy, 6, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(0,0,0,0.6)';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            // Heart badge
+            if (g.heart) {
+                ctx.font = '10px sans-serif';
+                ctx.fillText('❤️', g.cx + 8, g.cy - 8);
+            }
+        });
+    }
+
+    draw();
+
+    // Hover interaction
+    canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        let hit = null;
+        for (const g of plotData) {
+            const dx = mx - g.cx;
+            const dy = my - g.cy;
+            if (Math.sqrt(dx * dx + dy * dy) < 14) { hit = g; break; }
+        }
+        if (hit) {
+            const decayRate = (BASE_DECAY * (1 - hit.timelessness / 10)).toFixed(3);
+            const yearsOld = CURRENT_YEAR - hit.year;
+            tooltip.innerHTML = `
+                <div class="tt-header">
+                    <img class="tt-cover" src="${hit.cover}" alt="${hit.title}">
+                    <div>
+                        <div class="tt-title">${hit.title}${hit.subtitle ? ' (' + hit.subtitle + ')' : ''}</div>
+                        <div class="tt-year">${hit.year} · ${yearsOld} years old</div>
+                        <div class="tt-genre">${hit.genreFit} ${hit.genre}</div>
+                        ${hit.heart ? '<div class="tt-heart">❤️ Heart Award</div>' : ''}
+                    </div>
+                </div>
+                <div class="tt-scores">
+                    <span class="score-label">Execution</span><span class="score-val">${hit.execution.toFixed(1)}</span>
+                    <span class="score-label">Original Value</span><span class="score-val">${hit.originalValue.toFixed(1)}</span>
+                    <span class="score-label">Current Value</span><span class="score-val" style="color:var(--lambda-orange);">${hit.currentValue.toFixed(2)}</span>
+                    <span class="score-label">Timelessness</span><span class="score-val">${hit.timelessness.toFixed(1)}</span>
+                    <span class="score-label">Originality</span><span class="score-val">${hit.originality.toFixed(1)}</span>
+                    <span class="score-label">Art</span><span class="score-val">${hit.art.toFixed(1)}</span>
+                    <span class="score-label">Decay/Year</span><span class="score-val" style="color:var(--alert-red);">-${decayRate}</span>
+                </div>
+                <div class="tt-features">${hit.features.map(f => '<span class="tt-tag">' + f + '</span>').join('')}</div>
+            `;
+            // Position tooltip
+            let tx = mx + 18;
+            let ty = my - 10;
+            const wrapRect = canvas.parentElement.getBoundingClientRect();
+            if (tx + 300 > wrapRect.width) tx = mx - 280;
+            if (ty + 200 > wrapRect.height) ty = my - 200;
+            if (ty < 0) ty = 5;
+            tooltip.style.left = tx + 'px';
+            tooltip.style.top = ty + 'px';
+            tooltip.classList.add('visible');
+        } else {
+            tooltip.classList.remove('visible');
+        }
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
